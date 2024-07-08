@@ -15,7 +15,7 @@ import insta6 from "../../img/insta6.jpg";
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
 import { Circle, Eye, Heart, Instagram, Quote, ShoppingBag, Star } from 'lucide-react';
-import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import DisplayMenu from "../MobileMenu/DisplayMenu";
@@ -33,14 +33,19 @@ export default function Home() {
 
     {/* landing carousel sec start */}
     <section className='landing'>
-    <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="true">
-    <div className="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" className="active" aria-label="Slide 1" aria-current="true"></button>
-    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div className="carousel-inner">
-    <div className="carousel-item active" data-bs-interval={3000}>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      navigation
+      autoplay={{ delay: 3000 }}
+      effect="fade"
+      speed={2000}
+      loop={true}
+      modules={[Navigation, Pagination, Autoplay, EffectFade]}
+    >
+      <SwiperSlide className="carousel-inner2">
+      <div className="carousel-item2">
       <img src={Slide1} alt="slide1"/>
       <div className="carouselText text-center">
         <h1>
@@ -55,8 +60,10 @@ export default function Home() {
         </Link>
       </div>
     </div>
-    <div className="carousel-item" data-bs-interval={3000}>
-      <img src={Slide2} alt="slide2"/>
+      </SwiperSlide>
+      <SwiperSlide className="carousel-inner2">
+      <div className="carousel-item2">
+      <img src={Slide2} alt="slide1"/>
       <div className="carouselText text-center">
         <h1>
         Hulton<br />
@@ -70,7 +77,9 @@ export default function Home() {
         </Link>
       </div>
     </div>
-    <div className="carousel-item" data-bs-interval={3000}>
+      </SwiperSlide>
+      <SwiperSlide className="carousel-inner2">
+      <div className="carousel-item2">
       <img src={Slide3} alt="slide3"/>
       <div className="carouselText text-center">
         <h1>
@@ -85,16 +94,8 @@ export default function Home() {
         </Link>
       </div>
     </div>
-  </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
+      </SwiperSlide>
+    </Swiper>
     </section>
     {/* landing carousel sec end */}
 
@@ -500,12 +501,9 @@ export default function Home() {
     <section className='review mt-80'>
       <div className="container">
       <Swiper
-      modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+      modules={[Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       loop={true}
       autoplay={{ delay: 3000, disableOnInteraction: false}}
       speed={1000}

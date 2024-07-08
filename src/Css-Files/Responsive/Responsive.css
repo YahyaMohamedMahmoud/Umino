@@ -105,28 +105,22 @@
     .offcanvas.show:not(.hiding), .offcanvas.showing {
         height: 100vh;
     }
-    .carousel-control-prev , .carousel-control-next{
-        display: none;
-    }
     .landing .carouselText{
         text-align: start !important;
     }
     .landing .carouselText h1{
         font-size: 50px;
     }
-    .carousel-inner {
+    .carousel-inner2 {
         height: 400px;
     }
-    .carousel-inner img{
+    .carousel-inner2 img{
         height: 400px;
         object-fit: cover;
     }
     .landing .carouselText {
         top: 20%;
         left: 3%;
-    }
-    .landing .carousel-indicators [data-bs-target] {
-        padding: 3px;
     }
     .link{
         padding: 16px 40px;
@@ -254,19 +248,16 @@
     .landing .carouselText h1{
         font-size: 35px;
     }
-    .carousel-inner {
+    .carousel-inner2 {
         height: 350px;
     }
-    .carousel-inner img{
+    .carousel-inner2 img{
         height: 350px;
         object-fit: cover;
     }
     .landing .carouselText {
         top: 20%;
         left: 3%;
-    }
-    .landing .carousel-indicators [data-bs-target] {
-        padding: 3px;
     }
     .link{
         padding: 16px 40px;
