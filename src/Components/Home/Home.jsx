@@ -35,7 +35,7 @@ export default function Home() {
     <section className='landing'>
     <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="carousel">
     <div className="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" className="active" aria-label="Slide 1" aria-current="true"></button>
     <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>

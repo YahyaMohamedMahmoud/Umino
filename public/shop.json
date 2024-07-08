@@ -1,0 +1,357 @@
+{
+  "shop": [
+    {
+      "id": 1,
+      "img": "img/Api-img/Furniture-5_2cb2e01b-3202-4dec-924a-67eca73c54b6.jpg",
+      "img_hover": "img/Api-img/Furniture-5-hover.jpg",
+      "onsale": false,
+      "price": 300,
+      "title": "Armchair Morgen",
+      "type": "PERKENS"
+    },
+    {
+      "id": 2,
+      "img": "img/Api-img/Tableware-3.webp",
+      "img_hover": "img/Api-img/Tableware-3-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "Blue dinner plate",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 3,
+      "img": "img/Api-img/Decoration-10.jpg",
+      "img_hover": "img/Api-img/Decoration-10-hover.jpg",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Bowl Oliva",
+      "type": "WILLIS"
+    },
+    {
+      "id": 4,
+      "img": "img/Api-img/Tableware-6.webp",
+      "img_hover": "img/Api-img/Tableware-6-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "Bright bowl",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 5,
+      "img": "img/Api-img/Decoration-7.jpg",
+      "img_hover": "img/Api-img/Decoration-7-hover.jpg",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Candleholder Copenhagen",
+      "type": "WILLIS"
+    },
+    {
+      "id": 6,
+      "img": "img/Api-img/Tableware-2_55c26865-587e-4ab9-9641-9bbcc8171ed4.jpg",
+      "img_hover": "img/Api-img/Tableware-2-hover.jpg",
+      "onsale": false,
+      "price": 1500,
+      "title": "Ceramic bowl",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 7,
+      "img": "img/Api-img/chair.webp",
+      "img_hover": "img/Api-img/chair_hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Chai Leon",
+      "type": "PERKENS"
+    },
+    {
+      "id": 8,
+      "img": "img/Api-img/Furniture-1.webp",
+      "img_hover": "img/Api-img/Furniture-1-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Chair Dorothy",
+      "type": "PERKENS"
+    },
+    {
+      "id": 9,
+      "img": "img/Api-img/Decoration-9.jpg",
+      "img_hover": "img/Api-img/Decoration-9-hover.jpg",
+      "onsale": false,
+      "price": 300,
+      "title": "Chair Dylan",
+      "type": "PERKENS"
+    },
+    {
+      "id": 10,
+      "img": "img/Api-img/Furniture-7.webp",
+      "img_hover": "img/Api-img/Furniture-7-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Chair Harrison",
+      "type": "PERKENS"
+    },
+    {
+      "id": 11,
+      "img": "img/Api-img/Furniture-3.webp",
+      "img_hover": "img/Api-img/Furniture-3-hover.webp",
+      "onsale": true,
+      "discount": 30,
+      "price": 23,
+      "title": "Chair Marta",
+      "type": "PERKENS"
+    },
+    {
+      "id": 12,
+      "img": "img/Api-img/Furniture-4.webp",
+      "img_hover": "img/Api-img/Furniture-5_2cb2e01b-3202-4dec-924a-67eca73c54b6.jpg",
+      "onsale": false,
+      "price": 300,
+      "title": "Couch Miranda",
+      "type": "PERKENS"
+    },
+    {
+      "id": 13,
+      "img": "img/Api-img/Decoration-8.jpg",
+      "img_hover": "img/Api-img/Decoration-8-hover.jpg",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Glass candleholder",
+      "type": "WILLIS"
+    },
+    {
+      "id": 14,
+      "img": "img/Api-img/Decoration-9.jpg",
+      "img_hover": "img/Api-img/Decoration-9-hover.jpg",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Green vase",
+      "type": "WILLIS"
+    },
+    {
+      "id": 15,
+      "img": "img/Api-img/Tableware-8.webp",
+      "img_hover": "img/Api-img/Tableware-8-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "Grey bowl",
+      "type": "МAPEZIO"
+    },
+    {
+      "id": 16,
+      "img": "img/Api-img/Decoration-6.jpg",
+      "img_hover": "img/Api-img/Decoration-6-hover.webp",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Grey modern vase",
+      "type": "WILLIS"
+    },
+    {
+      "id": 17,
+      "img": "img/Api-img/Tableware-7.webp",
+      "img_hover": "img/Api-img/Tableware-7-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "Grey bowl",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 18,
+      "img": "img/Api-img/Lighting-2.webp",
+      "img_hover": "img/Api-img/Lighting-2-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp Artek",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 19,
+      "img": "img/Api-img/Lighting-3.webp",
+      "img_hover": "img/Api-img/Lighting-3-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp Grey Nura",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 20,
+      "img": "img/Api-img/Lighting-5.webp",
+      "img_hover": "img/Api-img/Lighting-5-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp Gubi",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 21,
+      "img": "img/Api-img/Lighting-8.webp",
+      "img_hover": "img/Api-img/Lighting-8-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp Louis",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 22,
+      "img": "img/Api-img/Lighting-6.webp",
+      "img_hover": "img/Api-img/Lighting-6-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp Orange sun",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 23,
+      "img": "img/Api-img/Lighting-9.webp",
+      "img_hover": "img/Api-img/Lighting-9-hover.webp",
+      "onsale": true,
+      "discount": 50,
+      "price": 30,
+      "title": "Lamp Tiffany",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 24,
+      "img": "img/Api-img/Lighting-4.webp",
+      "img_hover": "img/Api-img/Lighting-4-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp White drop",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 25,
+      "img": "img/Api-img/Lighting-10.jpg",
+      "img_hover": "img/Api-img/Lighting-10-hover.jpg",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp White flower",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 26,
+      "img": "img/Api-img/Lighting-7.jpg",
+      "img_hover": "img/Api-img/Lighting-7-hover.jpg",
+      "onsale": false,
+      "price": 300,
+      "title": "Lamp White night",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 27,
+      "img": "img/Api-img/Lighting-1.webp",
+      "img_hover": "img/Api-img/Lighting-1-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Modern black wall lamp",
+      "type": "CUBIKO"
+    },
+    {
+      "id": 28,
+      "img": "img/Api-img/Tableware-9.webp",
+      "img_hover": "img/Api-img/Tableware-9-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "Modern white milk jug",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 29,
+      "img": "img/Api-img/Furniture-2.webp",
+      "img_hover": "img/Api-img/Furniture-2-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Stool Doris",
+      "type": "PERKENS"
+    },
+    {
+      "id": 30,
+      "img": "img/Api-img/Furniture-10.webp",
+      "img_hover": "img/Api-img/Furniture-10-hover.webp",
+      "onsale": false,
+      "price": 300,
+      "title": "Stool Owen",
+      "type": "PERKENS"
+    },
+    {
+      "id": 31,
+      "img": "img/Api-img/Tableware-10.webp",
+      "img_hover": "img/Api-img/Tableware-10-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "Traditional bowl",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 32,
+      "img": "img/Api-img/Decoration-1.webp",
+      "img_hover": "img/Api-img/Decoration-1-hover.webp",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Vase Muto",
+      "type": "WILLIS"
+    },
+    {
+      "id": 33,
+      "img": "img/Api-img/Decoration-2.jpg",
+      "img_hover": "img/Api-img/Decoration-2-hover.jpg",
+      "onsale": true,
+      "discount": 7000,
+      "price": 5000,
+      "title": "Vase Seashell",
+      "type": "WILLIS"
+    },
+    {
+      "id": 34,
+      "img": "img/Api-img/Tableware-4.webp",
+      "img_hover": "img/Api-img/Tableware-4-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "White and green bowl",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 35,
+      "img": "img/Api-img/Decoration-5.webp",
+      "img_hover": "img/Api-img/Decoration-5-hover.webp",
+      "onsale": true,
+      "discount": 120,
+      "price": 85,
+      "title": "White ceramic vase",
+      "type": "WILLIS"
+    },
+    {
+      "id": 36,
+      "img": "img/Api-img/Tableware-1.webp",
+      "img_hover": "img/Api-img/Tableware-1-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "White dinner set",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 37,
+      "img": "img/Api-img/Tableware-5.webp",
+      "img_hover": "img/Api-img/Tableware-5-hover.webp",
+      "onsale": false,
+      "price": 1500,
+      "title": "White plate",
+      "type": "MAPEZIO"
+    },
+    {
+      "id": 38,
+      "img": "img/Api-img/Decoration-6.jpg",
+      "img_hover": "img/Api-img/Decoration-6-hover.webp",
+      "onsale": true,
+      "discount": 30,
+      "price": 25,
+      "title": "Wooden bowl",
+      "type": "WILLIS"
+    }
+  ]
+}
