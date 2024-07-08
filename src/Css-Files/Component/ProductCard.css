@@ -1,0 +1,77 @@
+.productCard{
+    position: relative;
+    margin-top: 30px;
+}
+.productCard .overlay{
+    position: absolute;
+    inset: 0;
+    height: 75%;
+    opacity: 0;
+    transition: all .5s;
+    overflow: hidden;
+}
+.productCard .overlay .actions{
+    position: relative;
+    bottom: 5%;
+    opacity: 1;
+    z-index: 11;
+    /* visibility: hidden; */
+    left: 26%;
+    transition: all .5s;
+}
+.productCard:hover .overlay .actions{
+    bottom: 16%;
+    opacity: 1;
+    visibility: visible;
+}
+.productCard .overlay .actions .add{
+    padding: 10px 14px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    margin-inline-end: 5px;
+    transition: all .6s;
+}
+.productCard .overlay .actions .add:hover{
+    background-color: black;
+}
+.productCard .overlay .actions .add:hover svg{
+    color: white;
+}
+.productCard .overlay .actions .add svg{
+    width: 20px;
+}
+.productCard:hover .overlay{
+    opacity: 1;
+}
+.productCard .overlay .overImage{
+    overflow: hidden;
+}
+.productCard .overlay .overImage img{
+    transition: all 1s;
+}
+.productCard:hover .overlay .overImage img{
+    transform: scale(1.1);
+}
+.productText{
+    margin-top: 20px;
+    z-index: 2;
+}
+.productText .icon{
+    display: block;
+    margin: 6px 0;
+}
+.productText .icon .star{
+    width: 15px;
+}
+.productText .price{
+    color: var(--parag-color);
+    font-size: 17px;
+    font-weight: var(--font-weight-Medium);
+}
+.productText .color{
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    margin-inline-end: 7px;
+}

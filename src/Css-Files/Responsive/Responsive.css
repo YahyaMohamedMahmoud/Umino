@@ -1,0 +1,378 @@
+@media screen and (max-width:1024px){
+    .landing .carouselText {
+        top: 20%;
+        left: 8%;
+    }
+    .landing .carouselText h1{
+        font-size: 65px;
+    }
+    .trend .cards img {
+        height: 300px;
+    }
+    .trend .cards .cardText {
+        bottom: 20%;
+        left: 5%;
+    }
+    .trend .cards .cardText p {
+        font-size: 16px;
+    }
+    .trend .cards .cardText h2 {
+        font-size: 40px;
+        padding: 15px 0;
+    }
+    .video .videoText {
+        width: max-content;
+        top: 26%;
+        left: 29%;
+    }
+    footer .toEmail{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    footer .link{
+        width: 98%;
+    }
+    .trend .cards {
+        margin-inline-start: 2px;
+        margin-inline-end: 2px;
+    }
+}
+@media screen and (max-width:992px){
+    .landing .carouselText {
+        top: 20%;
+        left: 8%;
+    }
+    .landing .carouselText h1{
+        font-size: 65px;
+    }
+    .trend .cards img {
+        height: 300px;
+    }
+    .trend .cards .cardText {
+        bottom: 20%;
+        left: 5%;
+    }
+    .trend .cards .cardText p {
+        font-size: 16px;
+    }
+    .trend .cards .cardText h2 {
+        font-size: 40px;
+        padding: 15px 0;
+    }
+    .video .videoText {
+        width: max-content;
+        top: 26%;
+        left: 29%;
+    }
+    footer .toEmail{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    footer .link{
+        width: 98%;
+    }
+    .trend .cards {
+        margin-inline-start: 2px;
+        margin-inline-end: 2px;
+    }
+}
+@media screen and (max-width:768px){
+    .mt-80 {
+        margin-top: 45px;
+    }
+    #headerPhone{
+        display: block;
+    }
+    header .rows{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    header .navbar2{
+        flex-direction: row;
+    }
+    header .colum3{
+        width: 26%;
+    margin-inline-start: 149px;
+    margin-top: 2px;
+    }
+    #headerDesktop{
+        display: none;
+    }
+    .offcanvas.show:not(.hiding), .offcanvas.showing {
+        height: 100vh;
+    }
+    .carousel-control-prev , .carousel-control-next{
+        display: none;
+    }
+    .landing .carouselText{
+        text-align: start !important;
+    }
+    .landing .carouselText h1{
+        font-size: 50px;
+    }
+    .carousel-inner {
+        height: 400px;
+    }
+    .carousel-inner img{
+        height: 400px;
+        object-fit: cover;
+    }
+    .landing .carouselText {
+        top: 20%;
+        left: 3%;
+    }
+    .landing .carousel-indicators [data-bs-target] {
+        padding: 3px;
+    }
+    .link{
+        padding: 16px 40px;
+        font-size: 10px;
+    }
+    .trend .cards img {
+        height: 229px;
+    }
+    .trend .cards .cardText {
+        bottom: 20%;
+        left: 5%;
+    }
+    .trend .cards .cardText p {
+        font-size: 12px;
+    }
+    .trend .cards .cardText h2 {
+        font-size: 30px;
+        padding: 15px 0;
+    }
+    .head {
+        font-size: 35px;
+    }
+    .productCard .overlay .actions .add svg {
+        width: 20px;
+    }
+    .productCard .overlay {
+        opacity: 1;
+    }
+    .productCard .overlay img{
+        opacity: 0;
+    }
+    .productCard .overlay:hover img{
+        opacity: 1;
+    }
+    .productCard .overlay .actions {
+        width: 79%;
+        bottom: 18%;
+        opacity: 1;
+        z-index: 11;
+        left: 19%;
+    }
+    .productCard .overlay .actions .add {
+        padding: 5px 10px;
+    }
+    .productCard:hover .overlay .actions{
+        bottom: 18%;
+    }
+    .video .videoText .parag1 {
+        font-size: 16px;
+    }
+    .video .videoText {
+        width: max-content;
+        top: 22%;
+        left: 24%;
+    }
+    .video .videoText .heading {
+        font-size: 46px;
+        padding: 20px 0;
+    }
+    .video video {
+        height: 390px;
+    }
+    .review .test {
+        width: 90%;
+        margin: auto;
+    }
+    .review span svg{
+        width: 16%;
+    }
+    .review h5{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    .marquee {
+        margin: 20px 0;
+    }
+    footer .details {
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+    footer .toEmail{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    footer .link{
+        width: 98%;
+    }
+    .trend .cards {
+        margin-inline-start: 2px;
+        margin-inline-end: 2px;
+    }
+
+}
+@media screen and (max-width:600px){
+    .mt-80 {
+        margin-top: 45px;
+    }
+    #headerPhone{
+        display: block;
+    }
+    header .rows{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    header .navbar2{
+        flex-direction: row;
+    }
+    header .colum3{
+        width: 26%;
+    margin-inline-start: 49px;
+    margin-top: 2px;
+    }
+    #headerDesktop{
+        display: none;
+    }
+    .carousel-control-prev , .carousel-control-next{
+        display: none;
+    }
+    .landing .carouselText{
+        text-align: start !important;
+    }
+    .landing .carouselText h1{
+        font-size: 35px;
+    }
+    .carousel-inner {
+        height: 350px;
+    }
+    .carousel-inner img{
+        height: 350px;
+        object-fit: cover;
+    }
+    .landing .carouselText {
+        top: 20%;
+        left: 3%;
+    }
+    .landing .carousel-indicators [data-bs-target] {
+        padding: 3px;
+    }
+    .link{
+        padding: 16px 40px;
+        font-size: 10px;
+    }
+    .trend .cards{
+        margin-top: 5px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .trend .row{
+        --bs-gutter-x: 0rem;
+    }
+    .trend .cards img {
+        height: 229px;
+    }
+    .trend .cards .cardText {
+        bottom: 20%;
+        left: 5%;
+    }
+    .trend .cards .cardText p {
+        font-size: 12px;
+    }
+    .trend .cards .cardText h2 {
+        font-size: 30px;
+        padding: 15px 0;
+    }
+    .head {
+        font-size: 35px;
+    }
+    .products .row .col-sm-6{
+        width: 50%;
+    }
+    .productCard .overlay .actions .add svg {
+        width: 15px;
+    }
+    .productCard .overlay {
+        opacity: 1;
+    }
+    .productCard .overlay img{
+        opacity: 0;
+    }
+    .productCard .overlay:hover img{
+        opacity: 1;
+    }
+    .productCard .overlay .actions {
+        width: 79%;
+        bottom: 18%;
+        opacity: 1;
+        z-index: 11;
+        left: 16%;
+    }
+    .productCard .overlay .actions .add {
+        padding: 4px 10px;
+    }
+    .productCard:hover .overlay .actions{
+        bottom: 18%;
+    }
+    .video .videoText .parag1 {
+        font-size: 12px;
+    }
+    .video .videoText {
+        width: max-content;
+        top: 25%;
+        left: 8%;
+    }
+    .video .videoText .heading {
+        font-size: 36px;
+        padding: 20px 0;
+    }
+    .video video {
+        height: 390px;
+    }
+    .review .test {
+        width: 90%;
+        margin: auto;
+    }
+    .review span svg{
+        width: 16%;
+    }
+    .review h5{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    .marquee {
+        margin: 20px 0;
+    }
+    footer .details {
+      margin-top: 40px;  
+    }
+    footer .toEmail{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    footer .link{
+        width: 98%;
+    }
+    footer .copy {
+        padding: 30px 39px;
+    }
+    footer .copy img{
+        width: 100%;
+    }
+    .btnFixed {
+        bottom: 100px;
+        right: 18px;
+    }
+}

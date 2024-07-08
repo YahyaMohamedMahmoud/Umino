@@ -1,0 +1,217 @@
+/* landing style sec start */
+.landing .carousel-item{
+   position: relative;
+}
+.landing .carouselText{
+   position: absolute;
+   top: 28%;
+   left: 10%;
+}
+.landing .carouselText h1{
+    font-size: 80px;
+    font-weight: var(--font-weight-Regular);
+    margin-bottom: 10px;
+}
+.landing .carouselText .parag{
+    margin-bottom: 45px;
+}
+.link{
+    background-color: var(--primary-color);
+    color: var(--secand-color);
+    padding: 18px 50px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: var(--font-weight-SemiBold);
+    text-transform: uppercase;
+}
+.landing .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 3rem;
+    padding: 25px;
+    background-color: var(--primary-color);
+    height: 3rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 60%;
+    border-radius: 50%;
+}
+.landing .carousel-control-next, .carousel-control-prev {
+    width: 6%;
+}
+.landing .carousel-indicators [data-bs-target] {
+    width: 3px;
+    height: 3px;
+    padding: 6px;
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity .6s ease;
+}
+.landing .carousel-indicators .active {
+    opacity: 1;
+    background-color: black;
+}
+/* landing style sec end */
+
+
+/* trend style sec start */
+.trend .cards {
+    position: relative;
+    overflow: hidden;
+}
+.trend .cards:hover img{
+    transform: scale(1.1);
+}
+.trend .cards img{
+    height: 430px;
+    transition: all .5s;
+    object-fit: cover;
+}
+.trend .cards .cardText {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+}
+.trend .cards .cardText p{
+    font-size: 14px;
+}
+.trend .cards .cardText h2{
+    font-size: 45px;
+    font-weight: var(--font-weight-Regular);
+    padding: 20px 0;
+}
+.trend .cards .cardText .toShop{
+    border-bottom: 2px solid black;
+    font-weight: var(--font-weight-Medium);
+}
+/* trend style sec end */
+
+
+/* products style sec start */
+.head{
+    font-size: 45px; 
+    font-weight: var(--font-weight-Regular);
+} 
+.paragHead{
+    color: var(--parag-color);
+}
+
+
+/* products style sec end */
+
+
+/* video style sec start */
+.video{
+    position: relative;
+}
+.video video {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.video .videoText{
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 34%;
+    height: 50%;
+    color: var(--secand-color);
+}
+.video .videoText .parag1{
+    font-weight: var(--font-weight-Medium);
+}
+.video .videoText .heading{
+    font-size: 50px;
+    font-weight: var(--font-weight-Regular);
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+.video .videoText .parag2{
+    margin-bottom: 40px;
+}
+.video .videoText .link{
+    background-color: var(--secand-color);
+    color: var(--primary-color);
+}
+/* video style sec end */
+
+/* review style sec start */
+.review .test {
+    width: 67%;
+    margin: auto;
+}
+.review span{
+    display: block;
+}
+.review span svg{
+    width: 6%;
+    height: auto;
+}
+.review h5{
+    font-size: 32px;
+    font-weight: var(--font-weight-Regular);
+    line-height: 1.8;
+    padding: 20px 0;
+}
+.review .icon svg{
+    width: 17px;
+}
+.review .name{
+    padding: 20px 0;
+    font-weight: var(--font-weight-Regular);
+}
+/* review style sec end */
+
+/* follow style sec start */
+.follow .follow2 {
+    border-top: 1px solid #eee;
+    padding-top: 70px;
+}
+.follow .swiperImg {
+    position: relative;
+    overflow: hidden;
+}
+.follow .swiperImg img{
+    transition: all .5s;
+}
+.follow .swiperImg:hover img{
+    transform: scale(1.1);
+} 
+.follow .swiperImg:hover .instaLink{
+    opacity: 1;
+    top: 40%;
+}
+.follow .instaLink {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    padding: 11px 12px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all .5s;
+    opacity: 0;
+}
+/* follow style sec end */
+
+
+/* marquee style sec start */
+.marquee{
+    margin: 30px 0;
+    overflow: hidden;
+}
+.marquee p {
+    margin: 0 60px;
+    display: inline-block;
+    overflow-x: hidden;
+    /* vertical-align: middle; */
+    font-weight: var(--font-weight-SemiBold);
+    font-size: 12px;
+}
+.marquee span svg{
+    width: 12px;
+}
+/* marquee style sec end */
+
+/* offer style sec start */
+.offer{
+    border-top: 1px solid #eee;
+    overflow-x: hidden;
+}

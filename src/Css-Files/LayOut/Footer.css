@@ -1,0 +1,73 @@
+footer{
+    background-color: #111111;
+    padding-top: 80px;
+    color: var(--footer-color);
+}
+footer .cards img{
+    width: 90px;
+}
+footer ul li p{
+    line-height: 2;
+    margin-bottom: 20px;
+}
+footer .gmail {
+    color: var(--secand-color);
+}
+footer .socail .linkSocial{
+    color: var(--footer-color);
+    padding: 8px 13px;
+    border: 1px solid var(--footer-color);
+    border-radius: 50%;
+    margin-inline-end: 8px;
+    font-size: 12px;
+    transition: all .5s;
+}
+footer .socail .twitter{
+    padding: 8px 11px;
+}
+footer .socail .youtube{
+    padding: 8px 10px;
+}
+footer .socail .insta{
+    padding: 8px 12px;
+}
+footer .socail .linkSocial:hover{
+    border-color: white;
+    color: white;
+}
+footer h6{
+    color: var(--secand-color);
+    margin-bottom: 29px;
+}
+footer a{
+    color: var(--footer-color);
+    transition: all .5s;
+}
+footer .list li{
+    padding-bottom: 15px;
+}
+footer ul li a:hover{
+   padding-inline-start: 20px;
+   color: var(--secand-color); 
+}
+footer .link{
+    background-color: var(--secand-color);
+    color: var(--primary-color);
+    border: none;
+    margin-inline-start: 5px;
+}
+footer .toEmail {
+    padding: 14px 25px;
+    border: 1px solid #333333;
+    background-color: transparent;
+    border-radius: 50px;
+    width: 59%;
+}
+footer .copy{
+    margin-top: 30px;
+    border-top: 1px solid #333333;
+    padding: 30px 0;
+}
+footer .copy img{
+    width: 28%;
+}

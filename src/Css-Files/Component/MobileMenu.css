@@ -1,0 +1,28 @@
+.menu .mobMenu {
+    background-color: var(--secand-color);
+    position: fixed;
+    bottom: 20px;
+    border-radius: 40px;
+    z-index: 220;
+    width: 90%;
+    left: 20px;
+    padding: 5px 24px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+.menu .mobMenu span{
+    font-size: 11px;
+    font-weight: var(--font-weight-Medium);
+}
+.menu .mobMenu span svg{
+    width: 20px;
+}
+.menu .mobMenu .start-100 {
+    left: 119% !important;
+}
+
+.menu .mobMenu .top-0 {
+    top: 20% !important;
+}
+.menu .mobMenu .number{
+    font-size: 9px;
+}

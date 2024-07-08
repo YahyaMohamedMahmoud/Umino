@@ -1,0 +1,19 @@
+/* Base css for all */
+@import url("./Base/Base.css");
+
+/* Layout css for header and footer */
+@import url("./LayOut/Header.css");
+@import url("./LayOut/Footer.css");
+
+
+/* pages css */
+@import url("./pages/Home.css");
+
+
+/* components css */
+@import url("./Component/ProductCard.css");
+@import url("./Component/MobileMenu.css");
+
+
+/* responsive css */
+@import url("./Responsive/Responsive.css");
