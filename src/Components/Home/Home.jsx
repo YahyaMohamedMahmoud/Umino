@@ -40,7 +40,7 @@ export default function Home() {
     <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div className="carousel-inner">
-    <div className="carousel-item active" data-bs-interval="4000">
+    <div className="carousel-item active" data-bs-interval="3000">
       <img src={Slide1} alt="slide1"/>
       <div className="carouselText text-center">
         <h1>
@@ -55,7 +55,7 @@ export default function Home() {
         </Link>
       </div>
     </div>
-    <div className="carousel-item" data-bs-interval="4000">
+    <div className="carousel-item" data-bs-interval="3000">
       <img src={Slide2} alt="slide2"/>
       <div className="carouselText text-center">
         <h1>
@@ -70,7 +70,7 @@ export default function Home() {
         </Link>
       </div>
     </div>
-    <div className="carousel-item" data-bs-interval="4000">
+    <div className="carousel-item" data-bs-interval="3000">
       <img src={Slide3} alt="slide3"/>
       <div className="carouselText text-center">
         <h1>
