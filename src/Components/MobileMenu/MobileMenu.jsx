@@ -21,7 +21,7 @@ export default function MobileMenu() {
       </a>
     </span>
     <span>
-    <Link type="button" className="position-relative">
+    <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="position-relative">
           <Heart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger number">
         0
@@ -31,7 +31,7 @@ export default function MobileMenu() {
       WishList
     </span>
     <span>
-    <Link type="button" className="position-relative">
+    <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" className="position-relative">
           <ShoppingCart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger number">
         0

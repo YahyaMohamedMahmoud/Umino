@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Logo from "../../img/logo_umino.png";
 import { Link } from 'react-router-dom';
 import { ChevronsUp, Heart, Menu, ShoppingCart, UserRound } from 'lucide-react';
+import OffcanvasWish from '../OffcanvasWish/OffcanvasWish';
+import OffcanvasCart from '../OffcanvasCart/OffcanvasCart';
 
 export default function Header() {
 
@@ -47,10 +49,10 @@ export default function Header() {
     <div>
     <ul className="navbar-nav m-auto mb-2 mb-lg-0">
         <li className="nav-item me-3">
-          <Link className="nav-link" aria-current="page" to="/">Home</Link>
+          <Link to="/" className="nav-link" aria-current="page">Home</Link>
         </li>
         <li className="nav-item me-3">
-          <Link className="nav-link" to="/shop">Shop</Link>
+          <Link className="nav-link" to="/shop" aria-label="Close">Shop</Link>
         </li>
         <li className="nav-item me-3">
           <Link className="nav-link" to="">Link</Link>
@@ -82,7 +84,7 @@ export default function Header() {
         </li>
 
           <li className='nav-item me-2'>
-          <Link type="button" className="position-relative">
+          <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" className="position-relative">
           <ShoppingCart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
         0
@@ -134,7 +136,7 @@ export default function Header() {
         </li>
 
           <li className='nav-item me-4'>
-          <Link type="button" className="position-relative">
+          <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="position-relative">
           <Heart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
         0
@@ -144,7 +146,7 @@ export default function Header() {
           </li>
 
           <li className='nav-item'>
-          <Link type="button" className="position-relative">
+          <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" className="position-relative">
           <ShoppingCart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
         0
@@ -157,10 +159,14 @@ export default function Header() {
   </div>
 </nav>
   </header>
+
+
   <button className={`btnFixed ${btnfixed ? "show" : ""}`} onClick={onScroll}>
   <ChevronsUp className='icon'/>
   </button>
 
+     <OffcanvasWish/>
+     <OffcanvasCart/>
 
 
    </>

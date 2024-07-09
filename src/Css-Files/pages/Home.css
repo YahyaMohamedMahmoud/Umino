@@ -28,7 +28,10 @@
     background-color: var(--primary-color);
     border-radius: 50%;
 }
-.landing .swiper-button-prev , .swiper-button-next{
+.landing .swiper-button-prev {
+display: none;
+}
+.landing .swiper-button-next{
 display: none;
 }
 /* landing style sec end */

@@ -15,7 +15,7 @@ import insta6 from "../../img/insta6.jpg";
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
 import { Circle, Eye, Heart, Instagram, Quote, ShoppingBag, Star } from 'lucide-react';
-import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import DisplayMenu from "../MobileMenu/DisplayMenu";

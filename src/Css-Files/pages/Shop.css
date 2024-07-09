@@ -1,0 +1,98 @@
+/* shop sec style start */
+.shop{
+    height: 200px;
+    background-image: url(../../img/banner-categories.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secand-color);
+}
+.shop .shoptext h1{
+    font-size: 45px;
+    font-weight: var(--font-weight-Regular);
+}
+.shop .shoptext a{
+    color: var(--secand-color);
+}
+/* shop sec style end */
+
+/* categ sec style start */
+.categ .cardImag {
+    position: relative;
+}
+.categ .cardInfo{
+    width: fit-content;
+    margin: auto;
+    position: absolute;
+    bottom: 30px;
+    left: 0%;
+    right: 0%;
+}
+.categ .cardInfo .infoHead{
+    font-weight: var(--font-weight-Medium);
+    padding: 10px 30px;
+    border-radius: 40px;
+    background-color: var(--secand-color);
+    color: var(--primary-color);
+    font-size: 16px;
+    transition: all .5s;
+}
+.categ .cardInfo .infoHead:hover{
+    background-color: var(--primary-color);
+    color: var(--secand-color);
+}
+.categ .swiper-button-prev{
+    margin-inline-start: 10px;
+}
+.categ .swiper-button-prev:after {
+    font-size: 22px;
+    background-color: white;
+    padding: 10px 16px;
+    border-radius: 50%;
+    color: black;
+}
+.categ .swiper-button-next{
+    margin-inline-end: 10px;
+}
+.categ .swiper-button-next:after{
+    font-size: 22px;
+    background-color: white;
+    padding: 10px 16px;
+    border-radius: 50%;
+    color: black;
+} 
+.categ .swiper-pagination{
+    display: none;
+}
+/* categ sec style end */
+
+
+/* product sec style start */
+.product .filter ul li{
+    padding-bottom: 15px;
+}
+.product .filter ul li a{
+    font-weight: var(--font-weight-Medium);
+}
+.product .filter2 {
+    border-top:1px solid #eee;
+}
+.product .filter2 .miniProduct .miniImage {
+    width: 100px;
+}
+.product .productCard{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product .productCard .overlay .actions {
+    bottom: 8%;
+    opacity: 1;
+    z-index: 11;
+    left: 17%;
+    width: fit-content;
+}
+.product .productCard:hover .overlay .actions{
+    bottom: 20%;
+}

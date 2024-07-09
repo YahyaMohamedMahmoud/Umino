@@ -104,6 +104,13 @@
     }
     .offcanvas.show:not(.hiding), .offcanvas.showing {
         height: 100vh;
+        width: 70%;
+    }
+    .offcanvas.offcanvas-end{
+        width: 70%;
+    }
+    .offcanvas.offcanvas-start{
+        width: 70%;
     }
     .landing .carouselText{
         text-align: start !important;
@@ -239,9 +246,6 @@
     #headerDesktop{
         display: none;
     }
-    .carousel-control-prev , .carousel-control-next{
-        display: none;
-    }
     .landing .carouselText{
         text-align: start !important;
     }
@@ -264,7 +268,7 @@
         font-size: 10px;
     }
     .trend .cards{
-        margin-top: 5px;
+        margin-bottom: 5px;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }
@@ -345,6 +349,9 @@
     .marquee {
         margin: 20px 0;
     }
+    footer{
+        padding-bottom: 50px;
+    }
     footer .details {
       margin-top: 40px;  
     }
@@ -365,5 +372,8 @@
     .btnFixed {
         bottom: 100px;
         right: 18px;
+    }
+    .product .productCard .overlay .actions {
+        bottom: 16%;
     }
 }

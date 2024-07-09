@@ -11,14 +11,15 @@ import 'swiper/css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
+import { store } from './ReduxToolkit/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Provider>
-    </Provider> */}
+    <Provider store={store}>
       <App />
+    </Provider>
   </React.StrictMode>
 );
 reportWebVitals();
