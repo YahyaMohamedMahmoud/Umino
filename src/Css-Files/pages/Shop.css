@@ -96,3 +96,17 @@
 .product .productCard:hover .overlay .actions{
     bottom: 20%;
 }
+.filterCateg{
+    position: fixed;
+    top: 50%;
+    left: -5%;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--secand-color);
+    padding: 6px 20px;
+    font-size: 17px;
+    border-radius: 5px;
+    z-index: 7;
+    transform: rotate(-90deg);
+    display: none;
+}

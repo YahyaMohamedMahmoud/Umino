@@ -2,12 +2,23 @@ import React, { useEffect } from 'react';
 import { Eye, Heart, ShoppingBag, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProduct } from '../../ReduxToolkit/slices/productSlice';
+import { fetchProduct, viewProduct } from '../../ReduxToolkit/slices/productSlice';
+import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
 export default function Products() {
 
   const state = useSelector((state)=> state.product)
   const { women } = state;
+
   const dispatch = useDispatch() 
+
+  const handleImageChange = (id, currentImageIndex) => {
+    const nextImageIndex = (currentImageIndex + 1) % 2;
+    dispatch(viewProduct({ id, nextImageIndex }));
+  };
+  const handleImageChange2 = (id, currentImageIndex) => {
+    const nextImageIndex = (currentImageIndex + 2) % 3;
+    dispatch(viewProduct({ id, nextImageIndex }));
+  };
 
     useEffect(()=>{
       dispatch(fetchProduct())  
@@ -18,7 +29,7 @@ export default function Products() {
     <div className="row">
         {
             women.map((product)=> (
-                <div key={product.id} className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div key={product.id} className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
 
       <div className="productCard productCard2">
               <div className="overlay overlay2">
@@ -26,7 +37,7 @@ export default function Products() {
                   <img src={product.imageHover} alt={product.title} loading='lazy'/>
                 </div>
                 <div className="actions actions2">
-                  <button className='add'>
+                  <button className='add' onClick={()=>dispatch(addToCart(product))}>
                   <ShoppingBag />
                   </button>
                   <button className='add'>
@@ -38,7 +49,7 @@ export default function Products() {
                 </div>
               </div>
               <div className="productImg">
-                <img src={product.image} alt={product.title} loading='lazy'/>
+                 <img src={product.image} alt={product.title} loading='lazy'/>
               </div>
               <div className="productText">
                 <Link to="/" className='toProduct'>
@@ -54,8 +65,12 @@ export default function Products() {
                 <p className='price'>
                 ${product.price}.00
                 </p>
-                <button className='color' style={{backgroundColor:`${product.color}`}}></button>
-                <button className='color' style={{backgroundColor:`${product.color2}`}}></button>
+                <button
+                className='color'
+                style={{ backgroundColor: `${product.color}` }}
+                onClick={() => handleImageChange(product.id, product.currentImageIndex)}
+              ></button>
+                <button className='color' style={{backgroundColor:`${product.color2}`}} onClick={() => handleImageChange2(product.id, product.currentImageIndex)}></button>
               </div>
             </div>
         </div>

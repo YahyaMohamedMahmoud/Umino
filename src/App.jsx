@@ -7,6 +7,7 @@ import Products from './Components/Shop/Products';
 import Men from './Components/Shop/Men';
 import Watches from './Components/Shop/Watches';
 import Sneakers from './Components/Shop/Sneakers';
+import Cart from './Components/Cart/Cart';
 export default function App() {
 
   let router = createBrowserRouter([
@@ -18,7 +19,8 @@ export default function App() {
         {path:"/shop/watches" , element:<Watches/>},
         {path:"/shop/sneakers" , element:<Sneakers/>}
 
-      ]}
+      ]},
+      {path:"/cart" , element:<Cart/>}
     ]}
   ])
   return <RouterProvider router={router}></RouterProvider>

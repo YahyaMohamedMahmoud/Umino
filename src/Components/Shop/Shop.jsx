@@ -10,6 +10,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Link, Outlet } from 'react-router-dom';
 import DisplayMenu from "../MobileMenu/DisplayMenu";
 import MobileMenu from '../MobileMenu/MobileMenu';
+import OffcanvasFilter from '../OffcanvasFilter/OffcanvasFilter';
 
 export default function Shop() {
     const Display = DisplayMenu()
@@ -38,8 +39,6 @@ export default function Shop() {
     <section className='categ mt-80'>
     <div className="container">
     <Swiper
-      spaceBetween={20}
-      slidesPerView={5}
       pagination={{ clickable: true }}
       navigation
       autoplay={{ delay: 5000 }}
@@ -68,7 +67,7 @@ export default function Shop() {
           spaceBetween: 5,
         },
         1200: {
-          slidesPerView: 6,
+          slidesPerView: 5,
           spaceBetween: 5,
         },
       }}
@@ -144,8 +143,9 @@ export default function Shop() {
     <section className='product mt-80 pb-5'>
         <div className="container">
             <div className="row">
-                <div className="col-xl-3">
-                    <div className="filter">
+                <div className="col-xl-3 col-lg-3">
+                   <div className="filterData">
+                   <div className="filter">
                         <h3 className='mb-5'>
                         Category
                         </h3>
@@ -191,10 +191,10 @@ export default function Shop() {
 </div>
                         </div>
                     </div>
+                   </div>
                 </div>
-                <div className="col-xl-9">
+                <div className="col-xl-9 col-lg-9">
                     <div className="products">
-
                     <Outlet></Outlet>
                     </div>
                 </div>
@@ -202,6 +202,12 @@ export default function Shop() {
         </div>
     </section>
 
+    {/* filter in mobile and tablet */}
+    <button className='filterCateg' type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          Filter
+         </button>
+      <OffcanvasFilter/>
+    {/* filter in mobile and tablet */}
 
     </>
 

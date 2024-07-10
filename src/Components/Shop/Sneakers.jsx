@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct } from '../../ReduxToolkit/slices/productSlice';
 import { Eye, Heart, ShoppingBag, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
 export default function Sneakers() {
     const state = useSelector((state)=> state.product)
     const { sneakers } = state;
@@ -26,7 +27,7 @@ export default function Sneakers() {
                     <img src={`/${product.imageHover}`} loading='lazy' alt={product.title} />
                   </div>
                   <div className="actions actions2">
-                    <button className='add'>
+                    <button className='add' onClick={()=>dispatch(addToCart(product))}>
                     <ShoppingBag />
                     </button>
                     <button className='add'>

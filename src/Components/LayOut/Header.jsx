@@ -3,12 +3,13 @@ import Logo from "../../img/logo_umino.png";
 import { Link } from 'react-router-dom';
 import { ChevronsUp, Heart, Menu, ShoppingCart, UserRound } from 'lucide-react';
 import OffcanvasWish from '../OffcanvasWish/OffcanvasWish';
-import OffcanvasCart from '../OffcanvasCart/OffcanvasCart';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
 
   const [headerfixed, setFixed] = useState(false);
   const [btnfixed , setbtnFixed] = useState(false);
+  const cart = useSelector((state)=> state.cart);
 
   function headerFixed(){
     if(window.scrollY > 100){
@@ -84,10 +85,10 @@ export default function Header() {
         </li>
 
           <li className='nav-item me-2'>
-          <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" className="position-relative">
+          <Link to="/cart" className="position-relative">
           <ShoppingCart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-        0
+        {cart.length}
         <span className="visually-hidden">unread messages</span>
       </span>
       </Link>
@@ -115,7 +116,7 @@ export default function Header() {
           <Link className="nav-link" to="/shop">Shop</Link>
         </li>
         <li className="nav-item me-3">
-          <Link className="nav-link" to="">Link</Link>
+          <Link className="nav-link" to="/cart">Link</Link>
         </li>
         <li className="nav-item me-3">
           <Link className="nav-link" to="">Link</Link>
@@ -146,10 +147,10 @@ export default function Header() {
           </li>
 
           <li className='nav-item'>
-          <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" className="position-relative">
+          <Link to="/cart" className="position-relative">
           <ShoppingCart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-        0
+        {cart.length}
         <span className="visually-hidden">unread messages</span>
       </span>
       </Link>
@@ -166,7 +167,6 @@ export default function Header() {
   </button>
 
      <OffcanvasWish/>
-     <OffcanvasCart/>
 
 
    </>

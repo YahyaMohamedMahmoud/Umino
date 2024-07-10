@@ -1,7 +1,10 @@
 import { Heart, House, Menu, ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function MobileMenu() {
+  
+  const cart = useSelector((state)=> state.cart);
 
   return (
     <>
@@ -31,10 +34,10 @@ export default function MobileMenu() {
       WishList
     </span>
     <span>
-    <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" className="position-relative">
+    <Link to="/cart" className="position-relative">
           <ShoppingCart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger number">
-        0
+        {cart.length}
         <span className="visually-hidden">unread messages</span>
       </span>
       </Link> <br />

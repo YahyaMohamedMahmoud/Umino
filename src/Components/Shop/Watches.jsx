@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProduct } from '../../ReduxToolkit/slices/productSlice';
+import { fetchProduct, viewWatchesImg } from '../../ReduxToolkit/slices/productSlice';
 import { Eye, Heart, ShoppingBag, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
 
 export default function Watches() {
     const state = useSelector((state)=> state.product)
@@ -12,6 +13,16 @@ export default function Watches() {
         dispatch(fetchProduct());
       
     }, [dispatch]);
+
+    const onhandelImages = (id , currentImageIndex) =>{
+     const nextImageIndex = (currentImageIndex + 1) % 2;
+     dispatch(viewWatchesImg({id , nextImageIndex})) 
+    }
+    const onhandelImages2 = (id , currentImageIndex) =>{
+     const nextImageIndex = (currentImageIndex + 2) % 3;
+     dispatch(viewWatchesImg({id , nextImageIndex})) 
+    }
+
     return (
       <>
   
@@ -26,7 +37,7 @@ export default function Watches() {
                     <img src={`/${product.imageHover}`} alt={product.title} />
                   </div>
                   <div className="actions actions2">
-                    <button className='add'>
+                    <button className='add' onClick={()=>dispatch(addToCart(product))}>
                     <ShoppingBag />
                     </button>
                     <button className='add'>
@@ -54,14 +65,13 @@ export default function Watches() {
                   <p className='price'>
                   ${product.price}.00
                   </p>
-                  <button className='color' style={{backgroundColor:`${product.color}`}}></button>
-                  <button className='color' style={{backgroundColor:`${product.color2}`}}></button>
+                  <button className='color' style={{backgroundColor:`${product.color}`}} onClick={()=>onhandelImages(product.id , product.currentImageIndex)}></button>
+                  <button className='color' style={{backgroundColor:`${product.color2}`}}  onClick={()=>onhandelImages2(product.id , product.currentImageIndex)}></button>
                 </div>
               </div>
           </div>
               ))
           }
-         
       </div>
       
       </>

@@ -37,6 +37,12 @@
         margin-inline-start: 2px;
         margin-inline-end: 2px;
     }
+    .shiping .checkOut {
+        padding: 13px 17px;
+    }
+    .cartTable .colum{
+        display: none;
+    }
 }
 @media screen and (max-width:992px){
     .landing .carouselText {
@@ -77,6 +83,12 @@
         margin-inline-start: 2px;
         margin-inline-end: 2px;
     }
+    .shiping .checkOut {
+        padding: 13px 17px;
+    }
+    .cartTable .colum{
+        display: none;
+    }
 }
 @media screen and (max-width:768px){
     .mt-80 {
@@ -104,13 +116,13 @@
     }
     .offcanvas.show:not(.hiding), .offcanvas.showing {
         height: 100vh;
-        width: 70%;
+        width: 40%;
     }
     .offcanvas.offcanvas-end{
-        width: 70%;
+        width: 40%;
     }
     .offcanvas.offcanvas-start{
-        width: 70%;
+        width: 40%;
     }
     .landing .carouselText{
         text-align: start !important;
@@ -173,7 +185,7 @@
         padding: 5px 10px;
     }
     .productCard:hover .overlay .actions{
-        bottom: 18%;
+        bottom: 20%;
     }
     .video .videoText .parag1 {
         font-size: 16px;
@@ -219,6 +231,25 @@
     .trend .cards {
         margin-inline-start: 2px;
         margin-inline-end: 2px;
+    }
+    .filterCateg{
+        display: block;
+        left: -3%;
+    }
+    .product .productCard .overlay .actions {
+        bottom: 20%;
+    }
+    .filterData{
+        display: none;
+    }
+    .cartTable .colum{
+        display: none;
+    }
+    .shiping{
+        margin-top: 20px;
+    }
+    .shiping .checkOut {
+        padding: 15px 39%;
     }
 
 }
@@ -318,7 +349,7 @@
         padding: 4px 10px;
     }
     .productCard:hover .overlay .actions{
-        bottom: 18%;
+        bottom: 20%;
     }
     .video .videoText .parag1 {
         font-size: 12px;
@@ -374,6 +405,43 @@
         right: 18px;
     }
     .product .productCard .overlay .actions {
-        bottom: 16%;
+        bottom: 20%;
+    }
+    .filterCateg{
+        display: block;
+        left: -5%;
+    }
+    .offcanvas.show:not(.hiding), .offcanvas.showing {
+        height: 100vh;
+        width: 70%;
+    }
+    .offcanvas.offcanvas-end{
+        width: 70%;
+    }
+    .offcanvas.offcanvas-start{
+        width: 70%;
+    }
+    .filterData{
+        display: none;
+    }
+    .cartTable .col-sm-12{
+        display: none;
+    }
+    .cartTable .back .backtoShop {
+        padding: 15px 28%;
+        margin-bottom: 10px;
+    }
+    .cartTable .back .backtoShop2{
+        padding: 15px 29.5%;
+        margin-top: 21px;
+    }
+    .shiping .checkOut {
+        padding: 15px 28%;
+    }
+    .cart .shoptext h1 {
+        font-size: 35px;
+    }
+    .cartTable .colum{
+        display: block;
     }
 }
