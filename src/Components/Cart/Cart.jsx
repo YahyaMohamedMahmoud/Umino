@@ -199,7 +199,7 @@ export default function Cart() {
                              Order Total
                              </td>
                              <td className='bordered'>
-                             ${product.price + 5}.00
+                             ${product.price * product.count + 5}.00
                              </td>
                          </tr>
  
