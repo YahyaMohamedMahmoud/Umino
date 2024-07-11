@@ -8,6 +8,8 @@ import Men from './Components/Shop/Men';
 import Watches from './Components/Shop/Watches';
 import Sneakers from './Components/Shop/Sneakers';
 import Cart from './Components/Cart/Cart';
+import WishList from './Components/WishList/WishList';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 export default function App() {
 
   let router = createBrowserRouter([
@@ -17,10 +19,12 @@ export default function App() {
         {index: true , element:<Products/>},
         {path:"/shop/men" , element:<Men/>},
         {path:"/shop/watches" , element:<Watches/>},
-        {path:"/shop/sneakers" , element:<Sneakers/>}
+        {path:"/shop/sneakers" , element:<Sneakers/>},
 
       ]},
-      {path:"/cart" , element:<Cart/>}
+      {path:"/cart" , element:<Cart/>},
+      {path:"/wishlist" , element:<WishList/>},
+      {path:"/productdetails/:id" , element:<ProductDetails/>}
     ]}
   ])
   return <RouterProvider router={router}></RouterProvider>

@@ -1,9 +1,10 @@
 import React from 'react';
-import collection from "../../img/fashion_products_16_02.jpg";
-
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function OffcanvasFilter() {
+  let wishlist = useSelector((state)=> state.wishlist);
+
   return (
     <>
     <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -44,19 +45,21 @@ export default function OffcanvasFilter() {
                         <h4 className='pb-3'>
                         My Wish List
                         </h4>
-                        <p>
-                        You have no items in your wish list.
-                        </p>
-                        <div className="miniProduct d-flex mt-3">
+                        {
+                          wishlist.length > 0 ? 
+                        wishlist.map((product)=> <div key={product.id} className="miniProduct d-flex mt-3">
                         <div className="d-flex">
   <div className="miniImage flex-shrink-0">
-    <img src={collection} alt="wishList"/>
+    <img src={product.image} alt="wishList"/>
   </div>
   <div className="flex-grow-1 ms-2">
-    see repjust it as needed.
+    {product.title}
   </div>
 </div>
-                        </div>
+                        </div>)  
+                       : <p>
+                       You have no items in your wish list.
+                       </p> }
                     </div>
   </div>
 </div>

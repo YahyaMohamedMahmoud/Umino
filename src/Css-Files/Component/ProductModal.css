@@ -1,0 +1,65 @@
+.modal-header{
+    border-bottom: none;
+    padding: 13px 14px;
+}
+.modal-body{
+    padding: 10px;
+}
+.modalText{
+    overflow-y: scroll;
+    height: 71vh;
+}
+.modalText2 h1{
+    font-size: 25px;
+    margin-bottom: 6px;
+    font-weight: var(--font-weight-Regular);
+}
+.modalText2 .icon .star{
+   width: 15px; 
+}
+.modalText2 h2{
+    font-size: 30px;
+    font-weight: var(--font-weight-Medium);
+    margin-top: 10px;
+}
+.modalText2 .desc {
+    color: #999;
+    margin-top: 20px;
+}
+.modalText2 .choose{
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 1px solid #9999993a;
+    border-bottom: 1px solid #9999993a;
+}
+.modalText2 .modalHead{
+    font-size: 20px;
+    font-weight: var(--font-weight-Regular);
+    padding-bottom: 10px;    
+}
+.modalText2 .toCart{
+    width: 100%;
+    border: none;
+}
+.modalText2 .delivery{
+    border-top: 1px solid #9999993a;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+.modalText2 .delivery p {
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 15px;
+}
+.modalText2 .delivery p .date {
+    color: black;
+    font-weight: var(--font-weight-Medium);
+}
+.modalText2 .payment {
+    width: 90%;
+    margin: auto;
+}
+.details .modalText2 .payment {
+    width: 50%;
+    margin: 20px 0;
+}

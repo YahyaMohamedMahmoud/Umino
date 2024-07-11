@@ -10,11 +10,13 @@
 @import url("./pages/Home.css");
 @import url("./pages/Shop.css");
 @import url("./pages/Cart.css");
+@import url("./pages/ProductDetails.css");
 
 
 /* components css */
 @import url("./Component/ProductCard.css");
 @import url("./Component/MobileMenu.css");
+@import url("./Component/ProductModal.css");
 
 
 /* responsive css */

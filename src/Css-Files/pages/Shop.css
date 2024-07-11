@@ -43,27 +43,27 @@
     background-color: var(--primary-color);
     color: var(--secand-color);
 }
-.categ .swiper-button-prev{
+.swiper-button-prev{
     margin-inline-start: 10px;
 }
-.categ .swiper-button-prev:after {
+.swiper-button-prev:after {
     font-size: 22px;
     background-color: white;
     padding: 10px 16px;
     border-radius: 50%;
     color: black;
 }
-.categ .swiper-button-next{
+.swiper-button-next{
     margin-inline-end: 10px;
 }
-.categ .swiper-button-next:after{
+.swiper-button-next:after{
     font-size: 22px;
     background-color: white;
     padding: 10px 16px;
     border-radius: 50%;
     color: black;
 } 
-.categ .swiper-pagination{
+.swiper-pagination{
     display: none;
 }
 /* categ sec style end */

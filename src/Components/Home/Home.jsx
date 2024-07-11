@@ -1,11 +1,8 @@
-// import React, { useEffect } from 'react';
 import Slide1 from "../../img/h1-slide-show-1.jpg";
 import Slide2 from "../../img/h1-slide-show-2.jpg";
 import Slide3 from "../../img/h1-slide-show-3.jpg";
 import shop1 from "../../img/fas6_banner_1.png";
 import shop2 from "../../img/fas6_banner_2.png";
-import product from "../../img/fashion_products_6_6_1.jpg";
-import product2 from "../../img/fashion_products_6_7_1.jpg";
 import insta1 from "../../img/insta1.jpg";
 import insta2 from "../../img/insta2.jpg";
 import insta3 from "../../img/insta3.jpg";
@@ -17,19 +14,31 @@ import { Link } from 'react-router-dom';
 import { Circle, Eye, Heart, Instagram, Quote, ShoppingBag, Star } from 'lucide-react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import DisplayMenu from "../MobileMenu/DisplayMenu";
+import HomeCards from "../HomeCards/HomeCards";
+import { addToCart } from "../../ReduxToolkit/slices/cartSlice";
+import { addToWish } from "../../ReduxToolkit/slices/wishlistSlice";
+import { productDetails, productView } from "../../ReduxToolkit/slices/productModal";
+import ProductModal from "../ProductModal/ProductModal";
+import { useDispatch } from "react-redux";
+import { viewProduct } from "../../ReduxToolkit/slices/productSlice";
 
 export default function Home() {
 
-  const Display = DisplayMenu()
+ const products = HomeCards();
+ const dispatch = useDispatch();
 
+ const handleImageChange = (id, currentImageIndex) => {
+  const nextImageIndex = (currentImageIndex + 1) % 2;
+  dispatch(viewProduct({ id, nextImageIndex }));
+};
+const handleImageChange2 = (id, currentImageIndex) => {
+  const nextImageIndex = (currentImageIndex + 2) % 3;
+  dispatch(viewProduct({ id, nextImageIndex }));
+};
 
   return (
     <>
-    {/* menu */}
-     {Display && <MobileMenu />}
-    {/* menu */}
+
 
     {/* landing carousel sec start */}
     <section className='landing'>
@@ -150,30 +159,33 @@ export default function Home() {
           </p>
         </div>
         <div className="row">
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
+          {
+            products.map((product)=> <div key={product.id} className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+            <div className="productCard productCard2">
+              <div className="overlay overlay3">
                 <div className="overImage">
-                  <img src={product2} alt="product-2" />
+                  <img src={product.imageHover} alt="product-2" />
                 </div>
                 <div className="actions">
-                  <button className='add'>
+                  <button className='add' onClick={()=>dispatch(addToCart(product))}>
                   <ShoppingBag />
                   </button>
-                  <button className='add'>
+                  <button className='add' onClick={()=>dispatch(addToWish(product))}>
                   <Heart />
                   </button>
-                  <button className='add'>
+                  <button className='add' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>dispatch(productView(product))}>
                   <Eye />
                   </button>
                 </div>
               </div>
               <div className="productImg">
-                <img src={product} alt="product" />
+                <img src={product.image} alt="product" />
               </div>
               <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
+              <Link  to={`/productdetails/${product.id}`} onClick={()=>dispatch(productDetails(product))}>
+                <h2 className='toProduct'>
+                {product.title}
+                </h2>
                 </Link>
                 <span className='icon'>
                 <Star className='star'/>
@@ -183,293 +195,16 @@ export default function Home() {
                 <Star className='star'/>
                 </span>
                 <p className='price'>
-                $68.00
+                ${product.price}.00
                 </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
+                <button className='color' style={{backgroundColor:`${product.color}`}}  onClick={() => handleImageChange(product.id, product.currentImageIndex)}></button>
+                <button className='color' style={{backgroundColor:`${product.color2}`}}  onClick={() => handleImageChange2(product.id, product.currentImageIndex)}></button>
               </div>
             </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div className="productCard">
-              <div className="overlay">
-                <div className="overImage">
-                  <img src={product2} alt="product-2" />
-                </div>
-                <div className="actions">
-                  <button className='add'>
-                  <ShoppingBag />
-                  </button>
-                  <button className='add'>
-                  <Heart />
-                  </button>
-                  <button className='add'>
-                  <Eye />
-                  </button>
-                </div>
-              </div>
-              <div className="productImg">
-                <img src={product} alt="product" />
-              </div>
-              <div className="productText">
-                <Link to="/" className='toProduct'>
-                Teddy Bear Coats
-                </Link>
-                <span className='icon'>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                <Star className='star'/>
-                </span>
-                <p className='price'>
-                $68.00
-                </p>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-                <button className='color' style={{backgroundColor:"black"}}></button>
-              </div>
-            </div>
-          </div>
+          </div>)
+          }
+          <ProductModal/>
+         
         </div>
       </div>
     </section>

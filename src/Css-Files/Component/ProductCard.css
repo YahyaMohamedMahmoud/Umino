@@ -5,10 +5,13 @@
 .productCard .overlay{
     position: absolute;
     inset: 0;
-    height: 75%;
+    height: 70%;
     opacity: 0;
     transition: all .5s;
     overflow: hidden;
+}
+.productCard2 .overlay3{
+    height: 76%;
 }
 .productCard .overlay .actions{
     position: relative;
@@ -60,6 +63,9 @@
     display: block;
     margin: 6px 0;
 }
+.productText .toProduct{
+    font-size: 17px;
+}
 .productText .icon .star{
     width: 15px;
 }
@@ -68,7 +74,7 @@
     font-size: 17px;
     font-weight: var(--font-weight-Medium);
 }
-.productText .color{
+.color{
     padding: 12px;
     border-radius: 50%;
     border: none;

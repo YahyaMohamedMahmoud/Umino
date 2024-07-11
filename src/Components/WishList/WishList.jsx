@@ -1,17 +1,12 @@
-import React from 'react';
-import { ChevronLeft, Trash2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteAllCart, deleteCart } from '../../ReduxToolkit/slices/cartSlice';
+import { ChevronLeft, Trash2 } from 'lucide-react';
+import { deleteAllWish, deleteWishList } from '../../ReduxToolkit/slices/wishlistSlice';
+import { Link } from 'react-router-dom';
 
-
-export default function Cart() {
+export default function WishList() {
     const dispatch = useDispatch();
-    let cart = useSelector((state)=> state.cart);
-    const totalPrice = cart.reduce((total, product) => total + product.price * product.count, 0);
-    const shippingCost = 5; 
-    const freeShippingThreshold = 62;
-   
+    let wishlist = useSelector((state)=> state.wishlist);
   return (
     <>
 
@@ -19,21 +14,21 @@ export default function Cart() {
     <section className='cart'>
       <div className="shoptext text-center">
           <h1 className='mb-1'>
-          Shopping Cart
+          WishList
             </h1>
             <a href="/">
             Home /
             </a>  
-            <span> Cart</span>
+            <span> WishList</span>
         </div>  
     </section>
     {/* shop sec end */}
 
-    {/* cartTable sec start*/}
+    {/* WishlistTabel sec start*/}
     <section className='cartTable mb-5'>
         <div className="container">
             <div className="row">
-                <div className="col-xl-9 col-lg-9 col-md-12">
+                <div className="col-xl-12 col-lg-9 col-md-12">
                     <table className='table col-sm-12'>
                     <thead>
     <tr className='border py-2'>
@@ -44,8 +39,8 @@ export default function Cart() {
     </tr>
                     </thead>
                     <tbody>
-                        {cart.length > 0 ? 
-                        cart.map((product)=> <tr key={product.id}>
+                        {wishlist.length > 0 ? 
+                        wishlist.map((product)=> <tr key={product.id}>
                         <td className='border'>
                         <div className="d-flex">
                 <div className="flex-shrink-0">
@@ -58,7 +53,7 @@ export default function Cart() {
                     <p>
                         Type : {product.type}
                     </p>
-                    <button className='trash' onClick={()=>console.log(dispatch(deleteCart(product)))}>
+                    <button className='trash' onClick={()=>console.log(dispatch(deleteWishList(product)))}>
                     <Trash2 />
                     </button>
                 </div>
@@ -80,13 +75,13 @@ export default function Cart() {
                             </h5>
                         </td>
                     </tr>)
-                       : <tr className='bordered2'><td><h5 className='mt-3'>You have no items in your shopping cart.</h5> </td></tr>}
+                       : <tr className='bordered2'><td><h5 className='mt-3'>You have no items in your wishlist.</h5> </td></tr>}
                     </tbody>
                     </table>
                 <div className="colum">
                 {
-                    cart.length > 0 ?
-                    cart.map((product)=> <div key={product.id} className="shiping2 pb-4">
+                    wishlist.length > 0 ?
+                    wishlist.map((product)=> <div key={product.id} className="shiping2 pb-4">
        
                     <div className='summary mt-3'>
                     <div className="d-flex align-items-center">
@@ -100,7 +95,7 @@ export default function Cart() {
                         <p className='type'>
                             Type : {product.title}
                         </p>
-                        <button className='trash' onClick={()=>dispatch(deleteCart(product))}>
+                        <button className='trash' onClick={()=>dispatch(deleteWishList(product))}>
                         <Trash2 />
                         </button>
                     </div>
@@ -133,86 +128,23 @@ export default function Cart() {
                         </p>
                     </div>
                    </div>)
-                : <h5 className='pt-1 pb-4'>You have no items in your shopping cart.</h5> }
+                : <h5 className='pt-1 pb-4 text-center'>You have no items in your wishlist.</h5> }
                 </div>
-                    <div className="back d-xl-flex d-lg-flex d-md-flex justify-content-between mt-4">
-                      <Link to="/shop" className='backtoShop'>
+                <div className="back d-xl-flex d-lg-flex d-md-flex justify-content-between mt-4">
+                <Link to="/shop" className='backtoShop'>
                       <ChevronLeft /> Continue Shopping    
                     </Link>  
-                      <button className='backtoShop backtoShop2' onClick={()=>dispatch(deleteAllCart())}>
+                      <button className='backtoShop backtoShop2' onClick={()=>dispatch(deleteAllWish())}>
                       Clear Shopping Cart   
                     </button>  
                     </div>
                 </div>
-                <div className="col-xl-3 col-lg-3 col-md-12">
-                   { cart.length > 0 ?
-                     <div className="shiping">
-                    <div className="ship">
- 
-                     <div
-                     className="progress"
-                     role="progressbar"
-                     aria-label="Animated striped example"
-                     aria-valuenow="75"
-                     aria-valuemin="0"
-                     aria-valuemax="100"
-                     >
-                     <div
-                     className="progress-bar progress-bar-striped progress-bar-animated"
-                     style={{width: "100%"}}
-                     ></div>
-                     </div>
-                     <div className={`van ${totalPrice > freeShippingThreshold ? "activeVan" : "van"}`}>
-                     <span><i className="fa-solid fa-truck"></i></span>
-                     </div>
-                     <p className='buy'>
-                     Buy $62.00 more to enjoy <span>FREE SHIPPING!</span>
-                     </p>
-                        </div>
-                     <div className='summary mt-3'>
-                     <p>
-                     Summary
-                     </p>
-                     <table className='table bordered mt-3 mb-5'>
-                        <tbody className='bordered'>
-                         <tr className='bordered'>
-                             <td className='bordered'>
-                             Subtotal
-                             </td>
-                             <td className='bordered'>
-                             ${totalPrice}.00
-                             </td>
-                         </tr>
-                         <tr className='bordered'>
-                             <td className='bordered'>
-                             Shipping (Flat Rate - Fixed)
-                             </td>
-                             <td className='bordered'>
-                             ${shippingCost}.00
-                             </td>
-                         </tr>
-                         <tr className='bordered'>
-                             <td className='bordered'>
-                             Order Total
-                             </td>
-                             <td className='bordered'>
-                             ${totalPrice + shippingCost}.00
-                             </td>
-                         </tr>
- 
-                        </tbody>
-                     </table>
-                     <Link className='checkOut'>
-                     Proceed to Checkout
-                     </Link>
-                     </div>
-                    </div>
-                   : ""}
-                </div>
+               
             </div>
         </div>
     </section>
-    {/* cartTable sec end*/}
+    {/* WishlistTabel sec end*/}
+    
     </>
   )
 }

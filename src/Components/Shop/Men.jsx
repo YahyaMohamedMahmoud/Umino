@@ -4,6 +4,9 @@ import { fetchProduct, viewMenImages } from '../../ReduxToolkit/slices/productSl
 import { Eye, Heart, ShoppingBag, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
+import { addToWish } from '../../ReduxToolkit/slices/wishlistSlice';
+import { productDetails, productView } from '../../ReduxToolkit/slices/productModal';
+import ProductModal from '../ProductModal/ProductModal';
 
 export default function Men() {
 
@@ -33,26 +36,30 @@ export default function Men() {
       <div className={"productCard productCard2"}>
               <div className="overlay overlay2">
                 <div className="overImage">
-                  <img src={ `/${product.imageHover}`} loading='lazy' alt={product.title} />
+                  <img src={`/${product.imageHover}`} alt={product.title} loading='lazy'/>
                 </div>
                 <div className="actions actions2">
                   <button className='add' onClick={()=>dispatch(addToCart(product))}>
                   <ShoppingBag />
                   </button>
-                  <button className='add'>
+                  <button className='add' onClick={()=>dispatch(addToWish(product))}>
                   <Heart />
                   </button>
-                  <button className='add'>
+                  <button className='add' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>dispatch(productView(product))}>
                   <Eye />
                   </button>
                 </div>
               </div>
               <div className="productImg">
-                <img src={`/${product.image}`} alt={product.title} loading='lazy' />
+                 <img src={`/${product.image}`} alt={product.title} loading='lazy'/>
               </div>
+                
               <div className="productText">
-                <Link to="/" className='toProduct'>
+              <Link  to={`/productdetails/${product.id}`} onClick={()=>dispatch(productDetails(product))}>
+                <h2 className='toProduct'>
+
                 {product.title}
+                </h2>
                 </Link>
                 <span className='icon'>
                 <Star className='star'/>
@@ -71,7 +78,7 @@ export default function Men() {
         </div>
             ))
         }
-       
+       <ProductModal/>
     </div>
     
     </>

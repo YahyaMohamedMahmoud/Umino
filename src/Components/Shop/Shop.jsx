@@ -8,19 +8,15 @@ import collection6 from "../../img/fashion_products_6_6_1.jpg";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Link, Outlet } from 'react-router-dom';
-import DisplayMenu from "../MobileMenu/DisplayMenu";
-import MobileMenu from '../MobileMenu/MobileMenu';
 import OffcanvasFilter from '../OffcanvasFilter/OffcanvasFilter';
+import { useSelector } from 'react-redux';
 
 export default function Shop() {
-    const Display = DisplayMenu()
+    let wishlist = useSelector((state)=> state.wishlist);
 
 
   return (
     <>
-    {/* menu */}
-     {Display && <MobileMenu />}
-    {/* menu */}
     {/* shop sec start */}
     <section className='shop'>
       <div className="shoptext">
@@ -177,19 +173,24 @@ export default function Shop() {
                         <h4 className='pb-3'>
                         My Wish List
                         </h4>
-                        <p>
-                        You have no items in your wish list.
-                        </p>
-                        <div className="miniProduct d-flex mt-3">
+                       
+                        {
+                          wishlist.length > 0 ? 
+                        wishlist.map((product)=> <div key={product.id} className="miniProduct d-flex mt-3">
                         <div className="d-flex">
   <div className="miniImage flex-shrink-0">
-    <img src={collection} alt="wishList"/>
+    <img src={product.image} alt="wishList"/>
   </div>
   <div className="flex-grow-1 ms-2">
-    see repjust it as needed.
+    {product.title}
+    <p className='mt-3'>${product.price}.00</p>
   </div>
 </div>
-                        </div>
+                        </div>)  
+                       : <p>
+                       You have no items in your wish list.
+                       </p> }
+                        
                     </div>
                    </div>
                 </div>

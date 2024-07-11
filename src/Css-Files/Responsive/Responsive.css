@@ -43,6 +43,10 @@
     .cartTable .colum{
         display: none;
     }
+    .modal-body .modalText {
+        overflow-y: scroll;
+        height: 80vh;
+    }
 }
 @media screen and (max-width:992px){
     .landing .carouselText {
@@ -88,6 +92,10 @@
     }
     .cartTable .colum{
         display: none;
+    }
+    .modal-body .modalText {
+        overflow-y: scroll;
+        height: 80vh;
     }
 }
 @media screen and (max-width:768px){
@@ -250,6 +258,13 @@
     }
     .shiping .checkOut {
         padding: 15px 39%;
+    }
+    .modal-dialog{
+        max-width: 90%;
+    }
+    .modal-body .modalText {
+        overflow-y: scroll;
+        height: 68vh;
     }
 
 }
@@ -443,5 +458,28 @@
     }
     .cartTable .colum{
         display: block;
+    }
+    .modal{
+        margin: auto;
+    }
+    .modal-dialog{
+        max-width: 90%;
+        margin: auto;
+    }
+    .modal-body .modalText {
+        overflow-y: scroll;
+        height: 41vh;
+        margin-top: 25px;
+    }
+    .modal-body .productImage {
+        height: 269px;
+    object-fit: contain;
+    object-position: center;
+    }
+    .details .modalText2{
+        margin-top: 20px;
+    }
+    .productCard .overlay{
+        height: 62%;
     }
 }

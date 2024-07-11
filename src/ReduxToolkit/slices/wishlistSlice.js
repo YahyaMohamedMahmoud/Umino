@@ -1,19 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-export const cart =  createSlice({
+export const wishlist =  createSlice({
     initialState :[],
-    name:"cartSlice",
+    name:"wishlistSlice",
     reducers:{
-        addToCart:(state , action)=>{
-            let founded = state.find((product)=> product.id === action.payload.id)  ;
-            if(founded){
-             founded.count++ 
-            }  else{
-              state.push({...action.payload , count:1})
-            }
-        },
-        deleteCart:(state , action)=>{
+        deleteWishList:(state , action)=>{
             return state.map(product => {
                 if (product.id === action.payload.id) {
                   if (product.count > 1) {
@@ -26,11 +18,19 @@ export const cart =  createSlice({
               }).filter(product => product.count > 0 );
               
         },
-        deleteAllCart:(state , action)=>{
+        deleteAllWish:(state , action)=>{
           return state = []  
         },
+        addToWish:(state , action)=>{
+            let founded = state.find((product)=> product.id === action.payload.id)  ;
+            if(founded){
+             founded.count++ 
+            }  else{
+              state.push({...action.payload , count:1})
+            }
+        }
     }
 })
 
-export const {addToCart , deleteAllCart , deleteCart} = cart.actions;
-export default cart.reducer;
+export const {deleteAllWish , deleteWishList , addToWish} = wishlist.actions;
+export default wishlist.reducer;

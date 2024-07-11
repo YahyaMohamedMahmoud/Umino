@@ -67,5 +67,5 @@ export const productSlice = createSlice({
     })
    } ,
 })
-export const {viewProduct , viewMenImages , viewWatchesImg , addtocart} = productSlice.actions
+export const {viewProduct , viewMenImages , viewWatchesImg } = productSlice.actions
 export default productSlice.reducer;

@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 export default function MobileMenu() {
   
   const cart = useSelector((state)=> state.cart);
+  const wishlist = useSelector((state)=> state.wishlist);
 
   return (
     <>
@@ -24,10 +25,10 @@ export default function MobileMenu() {
       </a>
     </span>
     <span>
-    <Link type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" className="position-relative">
+    <Link to="/wishlist" className="position-relative">
           <Heart />
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger number">
-        0
+        {wishlist.length}
         <span className="visually-hidden">unread messages</span>
       </span>
       </Link> <br />
