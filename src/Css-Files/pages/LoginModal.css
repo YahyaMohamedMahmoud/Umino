@@ -1,0 +1,26 @@
+.signHead{
+    font-size: 32px;
+}
+.makeAccount {
+    color: #555555;
+}
+.input{
+    display: block;
+    width: 100%;
+    padding: 14px 19px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+}
+.modal-body2{
+    padding: 10px 45px !important;
+}
+.input:focus{
+    outline: none;
+}
+label{
+    font-size: 17px;
+}
+#btn{
+    width: 100%;
+    border: none;
+}

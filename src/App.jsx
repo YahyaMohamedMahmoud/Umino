@@ -10,6 +10,9 @@ import Sneakers from './Components/Shop/Sneakers';
 import Cart from './Components/Cart/Cart';
 import WishList from './Components/WishList/WishList';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import CreateAccount from './Components/CreateAccount/CreateAccount';
+import UserLogin from './Components/UserLogin/UserLogin';
+
 export default function App() {
 
   let router = createBrowserRouter([
@@ -24,7 +27,10 @@ export default function App() {
       ]},
       {path:"/cart" , element:<Cart/>},
       {path:"/wishlist" , element:<WishList/>},
-      {path:"/productdetails/:id" , element:<ProductDetails/>}
+      {path:"/productdetails/:id" , element:<ProductDetails/>},
+      {path:"/createaccount" , element:<CreateAccount/>},
+      {path:"/login" , element:<UserLogin/>}
+   
     ]}
   ])
   return <RouterProvider router={router}></RouterProvider>

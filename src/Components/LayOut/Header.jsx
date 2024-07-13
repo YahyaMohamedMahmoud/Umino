@@ -3,8 +3,7 @@ import Logo from "../../img/logo_umino.png";
 import { Link } from 'react-router-dom';
 import { ChevronsUp, Heart, Menu, ShoppingCart, Trash2, UserRound } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Offcanvas } from 'react-bootstrap';
-import LogIn from '../LogIn/LogIn';
+import { Modal, Offcanvas } from 'react-bootstrap';
 import { productDetails } from '../../ReduxToolkit/slices/productModal';
 import { deleteWishList } from '../../ReduxToolkit/slices/wishlistSlice';
 import { deleteCart } from '../../ReduxToolkit/slices/cartSlice';
@@ -47,8 +46,34 @@ export default function Header() {
       top:0
     })
   }
+  const [showLog, setShowLog] = useState(false);
 
+  const handleCloseLogModal = () => setShowLog(false);
+  const handleShowLogModal = () => setShowLog(true);
 
+  const [getUser, setGetUser] = useState({
+    modalEmail: "",
+    modalPassword: "",
+  });
+
+  const userData = JSON.parse(localStorage.getItem('user'));
+
+const mail = userData ? userData.email3 : '';
+const pass = userData ? userData.password3 : '';
+
+  function getuserData(event) {
+    const { name, value } = event.target;
+    setGetUser((prevState) => ({ ...prevState, [name]: value }));
+  }
+  function submit(event) {
+    event.preventDefault();
+    if (
+        mail === getUser.modalEmail &&
+        pass === getUser.modalPassword   
+      ) {
+        window.location.href = "/shop";
+      }
+}
 
   return (
    <>
@@ -96,10 +121,9 @@ export default function Header() {
       <div className="colum">
       <ul className='navbar-nav navbar2'>
       <li className='nav-item me-2'>
-          <button className='linked'>
+          <button onClick={handleShowLogModal} className='linked'>
         <UserRound />
           </button>
-          
         </li>
 
           <li className='nav-item me-2'>
@@ -190,12 +214,11 @@ export default function Header() {
       </ul>
       <ul className='navbar-nav'>
         <li className='nav-item me-4'>
-          <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal2" className='linked'>
+          <button onClick={handleShowLogModal} className='linked'>
         <UserRound />
           </button>
-        <LogIn/>
-          
         </li>
+      
 
           <li className='nav-item me-4'>
           <button onClick={handleShow2} className="position-relative linked">
@@ -261,7 +284,39 @@ export default function Header() {
 </nav>
   </header>
 
+   <section className='log'>
+    
+  <Modal show={showLog} onHide={handleCloseLogModal} centered className='dialog2'>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body className='modal-body2 text-center'>
+          <h1 className='signHead'>
+       Sign In
+       </h1>
+       <p className='makeAccount my-2'>
+       Don't have an account yet? <Link to="/createaccount" onClick={handleCloseLogModal}>Sign up</Link> for free
+       </p>
+       <form onSubmit={submit} className='mt-4'>
+        <label htmlFor="modalEmail"></label>
+        <input className='input' type="email" name="modalEmail" id="modalEmail" placeholder='Email' onChange={getuserData}/>
+        <label htmlFor="modalPassword"></label>
+        <input className='input' type="password" name="modalPassword" id="modalPassword" placeholder='Password' onChange={getuserData}/>
+        <div className='forget text-end my-3'>
+        <Link className='/'>Forget Your Password ?</Link>
+        </div>
+        <div className="salary">
+<button className='checkOut toCart d-block text-center mb-4' onSubmit={submit}>
+                                SIGN IN
 
+                                </button>
+</div>
+       </form>
+
+        </Modal.Body>
+      </Modal>
+    </section>                   
+
+  {/* <LogIn/> */}
   <button className={`btnFixed ${btnfixed ? "show" : ""}`} onClick={onScroll}>
   <ChevronsUp className='icon'/>
   </button>

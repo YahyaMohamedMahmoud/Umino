@@ -296,6 +296,9 @@
         width: 72%;
         margin: auto;
     }
+  .modal-body2 {
+        padding: 20px 43px !important;
+    }
 
 }
 @media screen and (max-width:600px){
@@ -531,4 +534,12 @@
     .offcanvas-body {
         padding: 5px 10px;
     }
+   .modal-body2 {
+        padding: 0px 20px !important;
+    }
+    .dialog2{
+    
+        max-width: 100%;
+
+}
 }
