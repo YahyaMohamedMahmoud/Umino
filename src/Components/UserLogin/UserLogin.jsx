@@ -7,6 +7,10 @@ export default function UserLogin() {
         userEmail: "",
         userPassword: "",
       });
+      const [error , setError] = useState({
+        password3:"",
+        userPassword:"" 
+    })
 
       const userData = JSON.parse(localStorage.getItem('user'));
 
@@ -15,15 +19,32 @@ export default function UserLogin() {
     
       function getuserData(event) {
         const { name, value } = event.target;
+        const err = {...error};
+        err[event.target.name] = "";
+        setError(err);
         setGetUser((prevState) => ({ ...prevState, [name]: value }));
       }
       function submit(event) {
         event.preventDefault();
+        const newErrors = {};
+        let isValid = true;
+        if (!getUser.userEmail) {
+            newErrors.userEmail = 'Please Enter Your Email';
+            isValid = false;
+          }
+        if (!getUser.userPassword) {
+            newErrors.userPassword = 'Please Enter Your Password';
+            isValid = false;
+          }
+          setError(newErrors);
         if (
             mail === getUser.userEmail &&
-            pass === getUser.userPassword   
+            pass === getUser.userPassword &&
+            isValid  
           ) {
             window.location.href = "/shop";
+          }else {
+            setError(newErrors);
           }
 }
   return (
@@ -51,8 +72,10 @@ export default function UserLogin() {
        <form className='mt-4' onSubmit={submit}>
         <label htmlFor="userEmail" className='mt-3 mb-2 ms-3'>Email</label>
         <input className='input' type="email" name="userEmail" id="userEmail" onChange={getuserData}/>
+        {error.userEmail && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.userEmail}</p>}
         <label htmlFor="userPassword" className='mt-3 mb-2 ms-3'>Password</label>
         <input className='input' type="password" name="userPassword" id="userPassword" onChange={getuserData}/>
+        {error.userPassword && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.userPassword}</p>}
         <button className='checkOut toCart d-block text-center my-5' type='submit' id='btn' onSubmit={submit}>
         Sign In
         </button>
