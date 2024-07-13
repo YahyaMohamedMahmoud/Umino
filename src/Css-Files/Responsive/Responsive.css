@@ -47,6 +47,15 @@
         overflow-y: scroll;
         height: 80vh;
     }
+    .salary .checkOut {
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+    .nav-pills {
+        width: 54%;
+        margin: auto;
+    }
 }
 @media screen and (max-width:992px){
     .landing .carouselText {
@@ -96,6 +105,15 @@
     .modal-body .modalText {
         overflow-y: scroll;
         height: 80vh;
+    }
+    .salary .checkOut {
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+    .nav-pills {
+        width: 54%;
+        margin: auto;
     }
 }
 @media screen and (max-width:768px){
@@ -266,6 +284,18 @@
         overflow-y: scroll;
         height: 68vh;
     }
+    .salary .checkOut {
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+    .flex-grow-1{
+        font-size: 13px;
+    }
+    .nav-pills {
+        width: 72%;
+        margin: auto;
+    }
 
 }
 @media screen and (max-width:600px){
@@ -346,6 +376,7 @@
     }
     .productCard .overlay {
         opacity: 1;
+        height: 64%;
     }
     .productCard .overlay img{
         opacity: 0;
@@ -479,7 +510,25 @@
     .details .modalText2{
         margin-top: 20px;
     }
-    .productCard .overlay{
-        height: 62%;
+    .nav2 {
+        padding: 8px 20px;
+        margin-inline-end: 2px;
+        font-size: 12px;
+    }
+    .nav-pills {
+        width: 97%;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        padding: 8px 25px;
+        margin-inline-end: 3px;
+    }
+    .productText .toProduct{
+        font-size: 14px;
+    }
+    .flex-grow-1{
+        font-size: 13px;
+    }
+    .offcanvas-body {
+        padding: 5px 10px;
     }
 }

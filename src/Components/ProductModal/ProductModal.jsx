@@ -2,7 +2,7 @@ import React from 'react';
 import { RefreshCcw, Ship, Star } from 'lucide-react';
 import payment from "../../img/payment_dark.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
 
@@ -24,10 +24,9 @@ export default function ProductModal() {
             <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="modalImg">
                 <Swiper
-      pagination={{ clickable: true }}
-      navigation
+      navigation={{ clickable: true }}
       speed={1000}
-      modules={[Navigation, Pagination]}
+      modules={[Navigation]}
       breakpoints={{
         320: {
           slidesPerView: 1,

@@ -3,7 +3,6 @@
     margin: auto;
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    /* color: var(--bs-nav-pills-link-active-color); */
     background-color: var(--primary-color);
     padding: 10px 30px;
     border-radius: 40px;

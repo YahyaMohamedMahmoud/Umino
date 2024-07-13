@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import collection from "../../img/fashion_products_16_02.jpg";
 import collection2 from "../../img/men_products_2_6_1_1.jpg";
 import collection3 from "../../img/watches_products_1_2.jpg";
@@ -6,14 +6,17 @@ import collection4 from "../../img/fashion_products_8_1.jpg";
 import collection5 from "../../img/fashion_products_7_1.jpg";
 import collection6 from "../../img/fashion_products_6_6_1.jpg";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { Link, Outlet } from 'react-router-dom';
-import OffcanvasFilter from '../OffcanvasFilter/OffcanvasFilter';
 import { useSelector } from 'react-redux';
+import { Offcanvas } from 'react-bootstrap';
 
 export default function Shop() {
     let wishlist = useSelector((state)=> state.wishlist);
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
   return (
     <>
@@ -23,9 +26,9 @@ export default function Shop() {
           <h1 className='mb-1'>
             Shop
             </h1>
-            <a href="/">
+            <Link to="/">
             Home /
-            </a>  
+            </Link>  
             <span> Shop</span>
         </div>  
     </section>
@@ -35,12 +38,11 @@ export default function Shop() {
     <section className='categ mt-80'>
     <div className="container">
     <Swiper
-      pagination={{ clickable: true }}
-      navigation
+      navigation={{ clickable: true }}
       autoplay={{ delay: 5000 }}
       speed={1000}
       loop={true}
-      modules={[Navigation, Pagination, Autoplay]}
+      modules={[Navigation, Autoplay]}
       breakpoints={{
         320: {
           slidesPerView: 2,
@@ -179,7 +181,7 @@ export default function Shop() {
                         wishlist.map((product)=> <div key={product.id} className="miniProduct d-flex mt-3">
                         <div className="d-flex">
   <div className="miniImage flex-shrink-0">
-    <img src={product.image} alt="wishList"/>
+    <img src={`/${product.image}`} alt="wishList"/>
   </div>
   <div className="flex-grow-1 ms-2">
     {product.title}
@@ -204,10 +206,67 @@ export default function Shop() {
     </section>
 
     {/* filter in mobile and tablet */}
-    <button className='filterCateg' type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-          Filter
-         </button>
-      <OffcanvasFilter/>
+      <button onClick={handleShow} className='filterCateg'>
+      Filter
+      </button>
+     <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Filter</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        <div className="offcanvas-body2 product">
+  <div className="filter">
+                        <h3 className='mb-5'>
+                        Category
+                        </h3>
+                        <ul>
+                            <li>
+                               <Link to="/shop" onClick={handleClose}>
+                        Women's Shirts   
+                        </Link> 
+                            </li>
+                            <li>
+                             <Link to="/shop/men" onClick={handleClose}>
+                        Men Clothes  
+                        </Link>   
+                            </li>
+                            <li>
+                             <Link to="/shop/watches" onClick={handleClose}>
+                        Watches  
+                        </Link>   
+                            </li>
+                            <li>
+                             <Link to="/shop/sneakers" onClick={handleClose}>
+                        Sneakers 
+                        </Link>   
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div className="filter2 mt-3 py-4">
+                        <h4 className='pb-3'>
+                        My Wish List
+                        </h4>
+                        {
+                          wishlist.length > 0 ? 
+                        wishlist.map((product)=> <div key={product.id} className="miniProduct d-flex mt-3">
+                        <div className="d-flex">
+  <div className="miniImage flex-shrink-0">
+    <img src={`/${product.image}`} alt="wishList"/>
+  </div>
+  <div className="flex-grow-1 ms-2">
+    {product.title}
+    <p className='mt-3'>${product.price}.00</p>
+  </div>
+</div>
+                        </div>)  
+                       : <p>
+                       You have no items in your wish list.
+                       </p> }
+                    </div>
+  </div>
+        </Offcanvas.Body>
+      </Offcanvas>
     {/* filter in mobile and tablet */}
 
     </>

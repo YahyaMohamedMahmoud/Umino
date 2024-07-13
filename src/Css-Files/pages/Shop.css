@@ -63,22 +63,25 @@
     border-radius: 50%;
     color: black;
 } 
-.swiper-pagination{
+/* .swiper-pagination{
     display: none;
-}
+} */
 /* categ sec style end */
 
 
 /* product sec style start */
+.product .filter{
+    border-bottom:1px solid #eee;
+}
 .product .filter ul li{
     padding-bottom: 15px;
 }
 .product .filter ul li a{
     font-weight: var(--font-weight-Medium);
 }
-.product .filter2 {
+/* .product .filter2 {
     border-top:1px solid #eee;
-}
+} */
 .product .filter2 .miniProduct .miniImage {
     width: 100px;
 }

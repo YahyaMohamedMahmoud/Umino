@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ChevronLeft, Trash2 } from 'lucide-react';
 import { deleteAllWish, deleteWishList } from '../../ReduxToolkit/slices/wishlistSlice';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
 
 export default function WishList() {
     const dispatch = useDispatch();
@@ -16,9 +17,9 @@ export default function WishList() {
           <h1 className='mb-1'>
           WishList
             </h1>
-            <a href="/">
+            <Link to="/">
             Home /
-            </a>  
+            </Link>  
             <span> WishList</span>
         </div>  
     </section>
@@ -28,13 +29,13 @@ export default function WishList() {
     <section className='cartTable mb-5'>
         <div className="container">
             <div className="row">
-                <div className="col-xl-12 col-lg-9 col-md-12">
+                <div className="col-xl-12 col-lg-12 col-md-12">
                     <table className='table col-sm-12'>
                     <thead>
     <tr className='border py-2'>
       <th className='border'>Item</th>
       <th className='border'>Price</th>
-      <th className='border'>Qty</th>
+      <th className='border'>To Cart</th>
       <th className='border'>Subtotal</th>
     </tr>
                     </thead>
@@ -53,7 +54,7 @@ export default function WishList() {
                     <p>
                         Type : {product.type}
                     </p>
-                    <button className='trash' onClick={()=>console.log(dispatch(deleteWishList(product)))}>
+                    <button className='trash' onClick={()=>dispatch(deleteWishList(product))}>
                     <Trash2 />
                     </button>
                 </div>
@@ -64,10 +65,11 @@ export default function WishList() {
                             ${product.price}.00
                             </h3>
                         </td>
-                        <td className='border'>
-                            <h4 className='head'>
-                                {product.count}
-                            </h4>
+                        <td className='border salary salaryTable'>
+                                <Link to="/cart" className='checkOut toCart d-block text-center' onClick={()=>dispatch(addToCart(product))}>
+                                Add To Cart
+
+                                </Link>
                         </td>
                         <td className='border'>
                             <h5 className='head'>
@@ -127,6 +129,12 @@ export default function WishList() {
                             ${product.price*product.count}.00
                         </p>
                     </div>
+                    <div className='salary'>
+                    <Link to="/cart" className='checkOut toCart d-block text-center' onClick={()=>dispatch(addToCart(product))}>
+                                Add To Cart
+
+                                </Link>
+                    </div>
                    </div>)
                 : <h5 className='pt-1 pb-4 text-center'>You have no items in your wishlist.</h5> }
                 </div>
@@ -135,7 +143,7 @@ export default function WishList() {
                       <ChevronLeft /> Continue Shopping    
                     </Link>  
                       <button className='backtoShop backtoShop2' onClick={()=>dispatch(deleteAllWish())}>
-                      Clear Shopping Cart   
+                      Clear your WishList   
                     </button>  
                     </div>
                 </div>

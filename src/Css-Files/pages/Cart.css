@@ -156,3 +156,11 @@
 .bordered2{
     border: 1px solid #493c3c1a;
 }
+.salary .checkOut{
+  width: 100%;
+  padding: 12px 49px;
+  border: none;
+}
+.salaryTable{
+  width: 23%;
+}

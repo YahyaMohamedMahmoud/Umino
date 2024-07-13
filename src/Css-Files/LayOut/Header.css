@@ -49,3 +49,14 @@
 #headerPhone{
     display: none;
 }
+.offcanvas .nav-link{
+    font-weight: var(--font-weight-Medium);
+}
+header .product .filter2 {
+    border-top: none;
+}
+.linked{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}

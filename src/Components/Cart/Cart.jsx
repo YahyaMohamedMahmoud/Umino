@@ -21,9 +21,9 @@ export default function Cart() {
           <h1 className='mb-1'>
           Shopping Cart
             </h1>
-            <a href="/">
+            <Link to="/">
             Home /
-            </a>  
+            </Link>  
             <span> Cart</span>
         </div>  
     </section>
@@ -58,7 +58,7 @@ export default function Cart() {
                     <p>
                         Type : {product.type}
                     </p>
-                    <button className='trash' onClick={()=>console.log(dispatch(deleteCart(product)))}>
+                    <button className='trash' onClick={()=>dispatch(deleteCart(product))}>
                     <Trash2 />
                     </button>
                 </div>

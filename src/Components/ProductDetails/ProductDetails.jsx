@@ -1,20 +1,21 @@
-import React from 'react';
-import { Eye, Heart, RefreshCcw, Ship, ShoppingBag, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Eye, Heart, RefreshCcw, Ship, ShoppingBag, Star, Trash2 } from 'lucide-react';
 import payment from "../../img/payment_dark.png";
 import logo from "../../img/logo_umino.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
+import { addToCart, deleteCart } from '../../ReduxToolkit/slices/cartSlice';
 import { Link } from 'react-router-dom';
 import HomeCards from "../HomeCards/HomeCards";
-import { addToWish } from "../../ReduxToolkit/slices/wishlistSlice";
-import { productDetails } from "../../ReduxToolkit/slices/productModal";
+import { addToWish, deleteWishList } from "../../ReduxToolkit/slices/wishlistSlice";
+import { productDetails, productView } from '../../ReduxToolkit/slices/productModal';
 import ProductModal from "../ProductModal/ProductModal";
 import { viewProduct } from "../../ReduxToolkit/slices/productSlice";
+import { Offcanvas } from 'react-bootstrap';
 
 export default function ProductDetails() {
-    const productView = useSelector((state)=> state.productView);
+    const productView2 = useSelector((state)=> state.productView);
     const dispatch = useDispatch()
     const products = HomeCards();
 
@@ -26,6 +27,24 @@ const handleImageChange2 = (id, currentImageIndex) => {
   const nextImageIndex = (currentImageIndex + 2) % 3;
   dispatch(viewProduct({ id, nextImageIndex }));
 };
+const wishlist = useSelector((state)=> state.wishlist);
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+function ToWishList(product){
+  dispatch(addToWish(product))
+  handleShow()
+}
+const cart = useSelector((state)=> state.cart);
+const [show3, setShow3] = useState(false);
+
+const handleClose3 = () => setShow3(false);
+const handleShow3 = () => setShow3(true);
+ function toCart(product){
+      dispatch(addToCart(product));
+      handleShow3();
+    }
 
   return (
     <>
@@ -35,9 +54,9 @@ const handleImageChange2 = (id, currentImageIndex) => {
           <h1 className='mb-1'>
           Product Details
             </h1>
-            <a href="/">
+            <Link to="/">
             Home /
-            </a>  
+            </Link>  
             <span> ProductDetails</span>
         </div>  
     </section>
@@ -50,12 +69,11 @@ const handleImageChange2 = (id, currentImageIndex) => {
             <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="modalImg">
                 <Swiper
-      pagination={{ clickable: true }}
-      navigation
+      navigation={{ clickable: true }}
       autoplay={{ delay: 2500 }}
       speed={1000}
       loop={true}
-      modules={[Navigation, Pagination , Autoplay]}
+      modules={[Navigation,Autoplay]}
       breakpoints={{
         320: {
           slidesPerView: 1,
@@ -84,10 +102,10 @@ const handleImageChange2 = (id, currentImageIndex) => {
       }}
     >
       <SwiperSlide>
-      <img src={`/${productView.image}`} alt={productView.title} className='productImage'/>
+      <img src={`/${productView2.image}`} alt={productView2.title} className='productImage'/>
       </SwiperSlide>
       <SwiperSlide>
-      <img src={`/${productView.imageHover}`} alt={productView.title} className='productImage'/>
+      <img src={`/${productView2.imageHover}`} alt={productView2.title} className='productImage'/>
       </SwiperSlide>
 
       
@@ -98,7 +116,7 @@ const handleImageChange2 = (id, currentImageIndex) => {
             <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="modalText2">
                     <h1>
-                    {productView.title}
+                    {productView2.title}
                     </h1>
                     <span className='icon'>
                 <Star className='star'/>
@@ -109,7 +127,7 @@ const handleImageChange2 = (id, currentImageIndex) => {
                 </span>
 
                 <h2>
-                ${productView.price}.00    
+                ${productView2.price}.00    
                 </h2>    
 
                 <p className='desc'>
@@ -122,15 +140,16 @@ const handleImageChange2 = (id, currentImageIndex) => {
                     </h3>
                 <button
                 className='color'
-                style={{ backgroundColor: `${productView.color}` }}
+                style={{ backgroundColor: `${productView2.color}` }}
                 
               ></button>
-                <button className='color' style={{backgroundColor:`${productView.color2}`}} ></button>
+                <button className='color' style={{backgroundColor:`${productView2.color2}`}} ></button>
                 </div>
             
-                <button className='checkOut toCart' onClick={()=>dispatch(addToCart(productView))}>
-                    Add to Cart
-                     </button>
+                <Link to="/cart" className='checkOut toCart d-block text-center' onClick={()=>dispatch(addToCart(productView2))}>
+                                Add To Cart
+
+                                </Link>
                      <h4 className='modalHead mt-4'>
                      Availability : In stock
                     </h4>
@@ -197,7 +216,7 @@ const handleImageChange2 = (id, currentImageIndex) => {
   </div>
   <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabIndex="0">
     <div className="row">
-      <div className="col-xl-3">
+      <div className="col-xl-3 col-lg-3 col-md-4">
       <div className="tabImg text-center">
       <img src={logo} alt="" className='mb-3'/>
         <Link to="/shop">
@@ -205,7 +224,7 @@ const handleImageChange2 = (id, currentImageIndex) => {
         </Link>
       </div>
       </div>
-      <div className="col-xl-9">
+      <div className="col-xl-9 col-lg-9 col-md-8">
         <h5 className='mb-2'>
           Umino
         </h5>
@@ -242,10 +261,10 @@ const handleImageChange2 = (id, currentImageIndex) => {
                   <img src={`/${product.imageHover}`} alt="product-2" />
                 </div>
                 <div className="actions">
-                  <button className='add' onClick={()=>dispatch(addToCart(product))}>
+                  <button className='add' onClick={()=>toCart(product)}>
                   <ShoppingBag />
                   </button>
-                  <button className='add' onClick={()=>dispatch(addToWish(product))}>
+                  <button className='add' onClick={()=>ToWishList(product)}>
                   <Heart />
                   </button>
                   <button className='add' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>dispatch(productView(product))}>
@@ -278,6 +297,87 @@ const handleImageChange2 = (id, currentImageIndex) => {
             </div>
           </div>)
           }
+           <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>WishList</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <div className="product">
+
+        <div className="filter2 mt-3">
+                        {
+                          wishlist.length > 0 ? 
+                        wishlist.map((product)=> <div key={product.id} className="miniProduct mt-3">
+                        <div className="d-flex">
+  <div className="miniImage flex-shrink-0">
+    <img src={`/${product.image}`} alt={product.title}/>
+  </div>
+  <div className="flex-grow-1 ms-2">
+  <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>{product.title}</Link> 
+    <p className='my-3'> Salary : ${product.price}.00</p>
+  <button className='trash' onClick={()=>dispatch(deleteWishList(product))}>
+                    <Trash2 />
+  </button>
+  </div>
+</div>
+                        </div>   
+                        
+                      )  
+                       : <p>
+                       You have no items in your wish list.
+                       </p> }
+<div className="salary">
+<Link className='checkOut toCart d-block text-center' to="/wishlist" >
+                                To WishList
+
+                                </Link>
+</div>
+                    </div>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
+      <Offcanvas show={show3} onHide={handleClose3} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Your Cart</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        <Offcanvas.Body>
+          <div className="product">
+
+        <div className="filter2 mt-3">
+                        {
+                          cart.length > 0 ? 
+                        cart.map((product)=> <div key={product.id} className="miniProduct mt-3">
+                        <div className="d-flex">
+  <div className="miniImage flex-shrink-0">
+    <img src={`/${product.image}`} alt={product.title}/>
+  </div>
+  <div className="flex-grow-1 ms-2">
+  <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>{product.title}</Link> 
+    <p className='my-1'>Salary : ${product.price}.00</p>
+    <p className='my-1'>Count : {product.count}</p>
+  <button className='trash' onClick={()=>dispatch(deleteCart(product))}>
+                 <Trash2 />
+  </button>
+  </div>
+</div>
+                        </div>   
+                        
+                      )  
+                       : <p className='text-center'>
+                       You have no items in Cart list.
+                       </p> }
+<div className="salary">
+<Link className='checkOut toCart d-block text-center' to="/cart" onClick={handleClose3}>
+                                To Your Cart
+
+                                </Link>
+</div>
+                    </div>
+          </div>
+        </Offcanvas.Body>
+        </Offcanvas.Body>
+      </Offcanvas>
           <ProductModal/>
          
         </div>
