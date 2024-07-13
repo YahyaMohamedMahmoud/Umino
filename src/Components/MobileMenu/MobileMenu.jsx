@@ -99,7 +99,7 @@ export default function MobileMenu() {
   </div>
   <div className="flex-grow-1 ms-2">
   <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>{product.title}</Link> 
-    <p className='my-3'>${product.price}.00</p>
+  <p className='my-3'>Salary : ${product.price}.00</p>
   <button className='trash' onClick={()=>dispatch(deleteWishList(product))}>
                     <Trash2 />
   </button>
