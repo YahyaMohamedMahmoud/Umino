@@ -327,14 +327,25 @@
         margin-top: 0px;
         margin-bottom: 10px;
     }
-    .check {
+    .check{
         background-position: 80%;
-    }
+        position: relative;
+        z-index: 1;
+        }
+        .check::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.155);
+        }
     .check .row{
         flex-direction: column-reverse;
     }
     .thank{
-        padding-bottom: 50px;
+        height: 125vh;
     }
     .thank .thankHead {
         width: 100%;
@@ -347,6 +358,9 @@
     .thank .thankHead p{
         font-size: 16px;
         margin-top: 10px;
+    }
+    .thank .checkOut {
+        width: 40%;
     }
 }
 @media screen and (max-width:600px){
@@ -588,6 +602,19 @@
     .dialog2{
         max-width: 100%;
 }
+.check{
+position: relative;
+z-index: 1;
+}
+.check::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.155);
+}
 .check .checkimage img{
     width: 73px;
 }
@@ -601,12 +628,24 @@
 }
 .thank{
     background-position: 60%;
-    padding-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.thank::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.149);
 }
 .thank .thankHead {
     width: 100%;
     text-align: start;
     margin-top: 30px;
+
 }
 .thank .thankHead h1{
     font-size: 27px;
@@ -614,5 +653,8 @@
 .thank .thankHead p{
     font-size: 14px;
     margin-top: 10px;
+}
+.thank .checkOut {
+    width: 100%;
 }
 }
