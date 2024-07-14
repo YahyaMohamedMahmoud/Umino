@@ -70,10 +70,10 @@ export default function UserLogin() {
        </h2>
        <form className='mt-4' onSubmit={submit}>
         <label htmlFor="userEmail" className='mt-3 mb-2 ms-3'>Email</label>
-        <input className='input' type="email" name="userEmail" id="userEmail" onChange={getuserData}/>
+        <input className='input' type="email" name="userEmail" id="userEmail" onChange={getuserData} placeholder='Email'/>
         {error.userEmail && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.userEmail}</p>}
         <label htmlFor="userPassword" className='mt-3 mb-2 ms-3'>Password</label>
-        <input className='input' type="password" name="userPassword" id="userPassword" onChange={getuserData}/>
+        <input className='input' type="password" name="userPassword" id="userPassword" onChange={getuserData} placeholder='Password'/>
         {error.userPassword && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.userPassword}</p>}
         <button className='checkOut toCart d-block text-center my-5' type='submit' id='btn' onSubmit={submit}>
         Sign In

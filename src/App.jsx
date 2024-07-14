@@ -14,11 +14,14 @@ import CreateAccount from './Components/CreateAccount/CreateAccount';
 import UserLogin from './Components/UserLogin/UserLogin';
 import Checkout from './Components/Checkout/Checkout';
 import Thanks from './Components/Thanks/Thanks';
+import AboutUs from './Components/AboutUs/AboutUs';
+import ContactUs from './Components/ContactUs/ContactUs';
+import NotFound from './Components/NotFound/NotFound';
 
 export default function App() {
 
   let router = createBrowserRouter([
-    {path:"" , element:<LayOut/> , children:[
+    {path:"" , element:<LayOut/>, errorElement:<NotFound/> , children:[
       {path:"/" , element:<Home/>},
       {path:"/shop" , element:<Shop/> ,children:[
         {index: true , element:<Products/>},
@@ -33,7 +36,9 @@ export default function App() {
       {path:"/createaccount" , element:<CreateAccount/>},
       {path:"/login" , element:<UserLogin/>},
       {path:"/checkout" , element:<Checkout/>},
-      {path:"/thanks" , element:<Thanks/>}
+      {path:"/thanks" , element:<Thanks/>},
+      {path:"/aboutus" , element:<AboutUs/>},
+      {path:"/contactus" , element:<ContactUs/>}
    
     ]}
   ])

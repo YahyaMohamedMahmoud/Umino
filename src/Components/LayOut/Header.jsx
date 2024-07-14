@@ -90,24 +90,24 @@ const pass = userData ? userData.password3 : '';
         </Offcanvas.Header>
         <Offcanvas.Body>
         <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-              <li className="nav-item me-3">
-                <Link to="/" className="nav-link" aria-current="page" onClick={handleClose}>Home</Link>
-              </li>
-              <li className="nav-item me-3">
-                <Link className="nav-link" to="/shop" onClick={handleClose}>Shop</Link>
-              </li>
-              <li className="nav-item me-3">
-                <Link className="nav-link" to="" onClick={handleClose}>Link</Link>
-              </li>
-              <li className="nav-item me-3">
-                <Link className="nav-link" to="" onClick={handleClose}>Link</Link>
-              </li>
-              <li className="nav-item me-3">
-                <Link className="nav-link" to="" onClick={handleClose}>Link</Link>
-              </li>
-              <li className="nav-item me-3">
-                <Link className="nav-link" to="" onClick={handleClose}>Link</Link>
-              </li>
+        <li className="nav-item me-3">
+          <Link className="nav-link" aria-current="page" to="/" onClick={handleClose}>Home</Link>
+        </li>
+        <li className="nav-item me-3">
+          <Link className="nav-link" to="/shop" onClick={handleClose}>Shop</Link>
+        </li>
+        <li className="nav-item me-3">
+          <Link className="nav-link" to="/aboutus" onClick={handleClose}>About Us</Link>
+        </li>
+        <li className="nav-item me-3">
+          <Link className="nav-link" to="/contactus" onClick={handleClose}>Contact Us</Link>
+        </li>
+        <li className="nav-item me-3">
+          <Link className="nav-link" to="/createaccount" onClick={handleClose}>Register</Link>
+        </li>
+        <li className="nav-item me-3">
+          <Link className="nav-link" to="/login" onClick={handleClose}>My Account</Link>
+        </li>
             </ul>
         </Offcanvas.Body>
       </Offcanvas>
@@ -200,16 +200,16 @@ const pass = userData ? userData.password3 : '';
           <Link className="nav-link" to="/shop">Shop</Link>
         </li>
         <li className="nav-item me-3">
-          <Link className="nav-link" to="">Link</Link>
+          <Link className="nav-link" to="/aboutus">About Us</Link>
         </li>
         <li className="nav-item me-3">
-          <Link className="nav-link" to="">Link</Link>
+          <Link className="nav-link" to="/contactus">Contact Us</Link>
         </li>
         <li className="nav-item me-3">
-          <Link className="nav-link" to="">Link</Link>
+          <Link className="nav-link" to="/createaccount">Register</Link>
         </li>
         <li className="nav-item me-3">
-          <Link className="nav-link" to="">Link</Link>
+          <Link className="nav-link" to="/login">My Account</Link>
         </li>
       </ul>
       <ul className='navbar-nav'>

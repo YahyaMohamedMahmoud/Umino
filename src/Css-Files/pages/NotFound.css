@@ -1,0 +1,14 @@
+.not{
+    width: 60%;
+    margin: auto;
+    padding-top: 130px;
+}
+
+.not .notImg img{
+    width: 500px;
+    margin: auto;
+}
+.not .checkOut{
+    width: 30%;
+    margin: auto;
+}

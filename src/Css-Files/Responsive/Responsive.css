@@ -66,6 +66,13 @@
         width: 60%;
         text-align: center;
     }
+    .best .storyText .checkOut {
+        width: 55%;
+    }
+    .not .checkOut {
+        width: 40%;
+        margin: auto;
+    }
 }
 @media screen and (max-width:992px){
     .landing .carouselText {
@@ -134,6 +141,13 @@
     .thank .thankHead {
         width: 60%;
         text-align: center;
+    }
+    .best .storyText .checkOut {
+        width: 55%;
+    }
+    .not .checkOut {
+        width: 40%;
+        margin: auto;
     }
 }
 @media screen and (max-width:768px){
@@ -361,6 +375,51 @@
     }
     .thank .checkOut {
         width: 40%;
+    }
+    .p-90{
+        padding: 50px 0;
+    }
+    .about{
+        height: 75vh;
+    }
+    .about .aboutText h1{
+        font-size: 40px;
+    }
+    .overparag{
+        width: 90%;
+    }
+    .story .storyText h2{
+        font-size: 30px;
+    }
+    .story .storyText p{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .our .ourText{
+        margin-bottom: 20px;
+    }
+    .our .ourText h4{
+        font-size: 17px;
+    }
+    .desc .descText {
+        width: 100%;
+    }
+    .desc .descText h4 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    .best .storyText {
+        margin: 20px 0;
+    }
+    .best .storyText .checkOut {
+        width: 55%;
+    }
+    .box .boxChild .boxText h6 {
+        font-size: 30px;
+    }
+    .not .checkOut {
+        width: 52%;
+        margin: auto;
     }
 }
 @media screen and (max-width:600px){
@@ -654,5 +713,55 @@ z-index: 1;
 }
 .thank .checkOut {
     width: 100%;
+}
+.p-90{
+    padding: 50px 0;
+}
+.about{
+    height: 75vh;
+}
+.about .aboutText h1{
+    font-size: 40px;
+}
+.overparag{
+    width: 90%;
+}
+.story .storyText h2{
+    font-size: 30px;
+}
+.story .storyText p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.our .ourText{
+    margin-bottom: 20px;
+}
+.desc .descText {
+    width: 100%;
+}
+.desc .descText h4 {
+    font-size: 18px;
+    line-height: 1.4;
+}
+.best .storyText {
+    margin: 20px 0;
+}
+.best .storyText .checkOut {
+    width: 55%;
+}
+.box .boxChild .boxText h6 {
+    font-size: 30px;
+}
+.not .notImg img {
+    width: 214px;
+    margin: auto;
+}
+.not{
+    width: 100%;
+    padding-top: 150px;
+}
+.not .checkOut {
+    width: 60%;
+    margin: auto;
 }
 }

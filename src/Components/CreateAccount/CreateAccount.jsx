@@ -85,10 +85,10 @@ export default function CreateAccount() {
        </h2>
        <form className='mt-4' onSubmit={submit}>
         <label htmlFor="firstname" className='mt-3 mb-2 ms-3'>First Name</label>
-        <input className='input' type="text" name="firstname" id="firstname" onChange={handleUser}/>
+        <input className='input' type="text" name="firstname" id="firstname" onChange={handleUser} placeholder='First Name'/>
         {error.firstname && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.firstname}</p>}
         <label htmlFor="lastname" className='mt-3 mb-2 ms-3'>Last Name</label>
-        <input className='input' type="text" name="lastname" id="lastname" onChange={handleUser}/>
+        <input className='input' type="text" name="lastname" id="lastname" onChange={handleUser} placeholder='Last Name'/>
         {error.lastname && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.lastname}</p>}
        </form>
         </div>
@@ -98,13 +98,13 @@ export default function CreateAccount() {
        </h2>
        <form className='mt-4' onSubmit={submit}>
         <label htmlFor="email3" className='mt-3 mb-2 ms-3'>Email</label>
-        <input className='input' type="email" name="email3" id="email3" onChange={handleUser}/>
+        <input className='input' type="email" name="email3" id="email3" onChange={handleUser} placeholder='Email'/>
         {error.email3 && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.email3}</p>}
         <label htmlFor="password3" className='mt-3 mb-2 ms-3'>Password</label>
-        <input className='input' type="password" name="password3" id="password3" onChange={handleUser}/>
+        <input className='input' type="password" name="password3" id="password3" onChange={handleUser} placeholder='Password'/>
         {error.password3 && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.password3}</p>}
         <label htmlFor="confirmpassword4" className='mt-3 mb-2 ms-3'>Confirm Password</label>
-        <input className='input' type="password" name="confirmpassword4" id="confirmpassword4" onChange={handleUser}/>
+        <input className='input' type="password" name="confirmpassword4" id="confirmpassword4" onChange={handleUser} placeholder='Confirm Password'/>
         {error.confirmpassword4 && <p className='ms-3 my-2' style={{ color: 'red' }}>{error.confirmpassword4}</p>}
         <div className="salary">
         <button className='checkOut toCart d-block text-center my-5' onSubmit={submit} type='submit'>
