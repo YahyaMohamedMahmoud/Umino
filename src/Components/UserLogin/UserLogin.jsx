@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 export default function UserLogin() {
 
     const [getUser, setGetUser] = useState({
@@ -11,8 +10,7 @@ export default function UserLogin() {
         password3:"",
         userPassword:"" 
     })
-
-      const userData = JSON.parse(localStorage.getItem('user'));
+  const userData = JSON.parse(localStorage.getItem('user'));
 
   const mail = userData ? userData.email3 : '';
   const pass = userData ? userData.password3 : '';
@@ -47,6 +45,7 @@ export default function UserLogin() {
             setError(newErrors);
           }
 }
+
   return (
     <>
        {/* shop sec start */}

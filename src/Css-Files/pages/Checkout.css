@@ -1,0 +1,42 @@
+.check{
+    background-image: url(../../img/wallpaperflare.com_wallpaper\ \(3\).jpg);
+    background-position: top;
+    background-size: cover;    
+}
+.input2 {
+    border: 1px solid #6161614d;
+    background: transparent;
+}
+.check .checkOut {
+    width: 100%;
+    border: none;
+}
+.check .checkimage img{
+    width: 100px;
+}
+.check .checktable{
+    margin-inline-start: 50px;
+    margin-top: 90px;
+}
+.thank {
+    height: 90vh;
+    background-image: url(../../img/998367.jpg);
+    display: flex;
+    align-items: center;
+}
+.thank .thankHead {
+    width: 50%;
+    text-align: center;
+}
+.thank .thankHead h1{
+    font-size: 70px;
+    font-family: "Dancing Script", cursive;
+    text-transform: uppercase;
+}
+.thank .thankHead p{
+    font-size: 25px;
+    margin-top: 10px;
+}
+.thank .checkOut{
+    width: 20%;
+}

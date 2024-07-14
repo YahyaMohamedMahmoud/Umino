@@ -2,7 +2,8 @@ import React from 'react';
 import { ChevronLeft, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteAllCart, deleteCart } from '../../ReduxToolkit/slices/cartSlice';
+import { checkout, deleteAllCart, deleteCart } from '../../ReduxToolkit/slices/cartSlice';
+import { productDetails } from '../../ReduxToolkit/slices/productModal';
 
 
 export default function Cart() {
@@ -53,7 +54,8 @@ export default function Cart() {
                 </div>
                 <div className="flex-grow-1 ms-3">
                     <h2>
-                    {product.title}
+                    <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>
+                    {product.title}</Link>
                     </h2>
                     <p>
                         Type : {product.type}
@@ -95,10 +97,12 @@ export default function Cart() {
                     </div>
                     <div className="flex-grow-1 ms-3">
                         <h6 className='heading'>
-                        {product.title}
+                        <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>
+                        {product.title} 
+                            </Link>
                         </h6>
                         <p className='type'>
-                            Type : {product.title}
+                            Type : {product.type}
                         </p>
                         <button className='trash' onClick={()=>dispatch(deleteCart(product))}>
                         <Trash2 />
@@ -202,7 +206,7 @@ export default function Cart() {
  
                         </tbody>
                      </table>
-                     <Link className='checkOut'>
+                     <Link className='checkOut' onClick={()=>dispatch(checkout(cart))} to="/checkout">
                      Proceed to Checkout
                      </Link>
                      </div>

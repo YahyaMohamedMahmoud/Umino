@@ -12,6 +12,8 @@ import WishList from './Components/WishList/WishList';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
 import UserLogin from './Components/UserLogin/UserLogin';
+import Checkout from './Components/Checkout/Checkout';
+import Thanks from './Components/Thanks/Thanks';
 
 export default function App() {
 
@@ -29,7 +31,9 @@ export default function App() {
       {path:"/wishlist" , element:<WishList/>},
       {path:"/productdetails/:id" , element:<ProductDetails/>},
       {path:"/createaccount" , element:<CreateAccount/>},
-      {path:"/login" , element:<UserLogin/>}
+      {path:"/login" , element:<UserLogin/>},
+      {path:"/checkout" , element:<Checkout/>},
+      {path:"/thanks" , element:<Thanks/>}
    
     ]}
   ])

@@ -39,11 +39,11 @@ export default function CreateAccount() {
             isValid = false;
           }
         if (!user.email3) {
-            newErrors.email3 = 'Please Enter Your Name';
+            newErrors.email3 = 'Please Enter Your Email';
             isValid = false;
           }
         if (!user.password3) {
-            newErrors.password3 = 'Please Enter Your Name';
+            newErrors.password3 = 'Please Enter Your Password';
             isValid = false;
           }
         if (user.password3 !== user.confirmpassword4) {

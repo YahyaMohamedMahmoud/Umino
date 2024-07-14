@@ -4,6 +4,7 @@ import { ChevronLeft, Trash2 } from 'lucide-react';
 import { deleteAllWish, deleteWishList } from '../../ReduxToolkit/slices/wishlistSlice';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../ReduxToolkit/slices/cartSlice';
+import { productDetails } from '../../ReduxToolkit/slices/productModal';
 
 export default function WishList() {
     const dispatch = useDispatch();
@@ -49,7 +50,10 @@ export default function WishList() {
                 </div>
                 <div className="flex-grow-1 ms-3">
                     <h2>
+                    <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>
+                        
                     {product.title}
+                        </Link>
                     </h2>
                     <p>
                         Type : {product.type}
@@ -92,7 +96,10 @@ export default function WishList() {
                     </div>
                     <div className="flex-grow-1 ms-3">
                         <h6 className='heading'>
-                        {product.title}
+                            
+                        <Link to={`/productdetails/${product.id}`} className='toDetails' onClick={()=>dispatch(productDetails(product))}>
+                    {product.title}
+                        </Link>
                         </h6>
                         <p className='type'>
                             Type : {product.title}

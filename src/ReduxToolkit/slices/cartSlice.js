@@ -29,8 +29,11 @@ export const cart =  createSlice({
         deleteAllCart:(state , action)=>{
           return state = []  
         },
+        checkout:(state , action)=>{
+          return action.payload
+        }
     }
 })
 
-export const {addToCart , deleteAllCart , deleteCart} = cart.actions;
+export const {addToCart , deleteAllCart , deleteCart , checkout} = cart.actions;
 export default cart.reducer;

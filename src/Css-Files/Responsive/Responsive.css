@@ -56,6 +56,16 @@
         width: 54%;
         margin: auto;
     }
+    .check {
+        background-position: 0%;
+    }
+    .thank .thankHead h1{
+        font-size: 55px;
+    }
+    .thank .thankHead {
+        width: 60%;
+        text-align: center;
+    }
 }
 @media screen and (max-width:992px){
     .landing .carouselText {
@@ -114,6 +124,16 @@
     .nav-pills {
         width: 54%;
         margin: auto;
+    }
+    .check {
+        background-position: 0%;
+    }
+    .thank .thankHead h1{
+        font-size: 55px;
+    }
+    .thank .thankHead {
+        width: 60%;
+        text-align: center;
     }
 }
 @media screen and (max-width:768px){
@@ -299,7 +319,35 @@
   .modal-body2 {
         padding: 20px 43px !important;
     }
-
+    .check .checkimage img{
+        width: 100px;
+    }
+    .check .checktable{
+        margin-inline-start: 0px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .check {
+        background-position: 80%;
+    }
+    .check .row{
+        flex-direction: column-reverse;
+    }
+    .thank{
+        padding-bottom: 50px;
+    }
+    .thank .thankHead {
+        width: 100%;
+        text-align: start;
+        margin-top: 50px;
+    }
+    .thank .thankHead h1{
+        font-size: 35px;
+    }
+    .thank .thankHead p{
+        font-size: 16px;
+        margin-top: 10px;
+    }
 }
 @media screen and (max-width:600px){
     .mt-80 {
@@ -538,8 +586,33 @@
         padding: 0px 20px !important;
     }
     .dialog2{
-    
         max-width: 100%;
-
+}
+.check .checkimage img{
+    width: 73px;
+}
+.check .row{
+    flex-direction: column-reverse;
+}
+.check .checktable{
+    margin-inline-start: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.thank{
+    background-position: 60%;
+    padding-bottom: 30px;
+}
+.thank .thankHead {
+    width: 100%;
+    text-align: start;
+    margin-top: 30px;
+}
+.thank .thankHead h1{
+    font-size: 27px;
+}
+.thank .thankHead p{
+    font-size: 14px;
+    margin-top: 10px;
 }
 }
