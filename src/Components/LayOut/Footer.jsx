@@ -94,12 +94,12 @@ export default function Footer() {
           </h6>
           <ul className='list'>
             <li>
-              <Link to="/">
+              <Link to="/login">
               My Account
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/aboutus">
               About Us
               </Link>
             </li>
@@ -109,12 +109,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/cart">
               My Cart
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/wishlist">
               Wishlist
               </Link>
             </li>
@@ -140,7 +140,7 @@ export default function Footer() {
         <p>
         © 2023 Umino Store. All Rights Reserved
         </p>
-        <img src={payment} alt="" />
+        <img src={payment} alt="paymentImage" />
       </div>
       </div>
     </footer>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export default function NotFound() {
   return (
    <>
+    {/* not sec start */}
     <section className='not p-90'>
         <div className="container">
             <div className="notImg">
@@ -24,6 +25,7 @@ export default function NotFound() {
             </div>
         </div>
     </section>
+   {/* not sec end */}
    </>
   )
 }

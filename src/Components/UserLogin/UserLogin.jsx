@@ -50,21 +50,23 @@ export default function UserLogin() {
     <>
        {/* shop sec start */}
        <section className='cart'>
-      <div className="shoptext text-center">
+      <div className="shoptext text-center" data-aos="fade-down"
+     data-aos-duration="4000" data-aos-easing="linear">
           <h1 className='mb-1'>
           Customer Login
             </h1>
             <Link to="/">
             Home / 
             </Link>  
-            <span>Customer Login</span>
+            <span> Customer Login</span>
         </div>  
     </section>
     {/* shop sec end */}
     <section className='sign'>
     <div className="container">
     <div className="row justify-content-center">
-        <div className="col-xl-5 col-lg-6">
+        <div className="col-xl-5 col-lg-6" data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
         <h2 className='signHead mt-3'>
         Registered Customers
        </h2>
@@ -80,7 +82,8 @@ export default function UserLogin() {
         </button>
        </form>
         </div>
-        <div className="col-xl-5 col-lg-6">
+        <div className="col-xl-5 col-lg-6" data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
         <h2 className='signHead mt-3'>
         Create an Account
        </h2>

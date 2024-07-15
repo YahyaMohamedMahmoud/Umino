@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import collection from "../../img/fashion_products_16_02.jpg";
 import collection2 from "../../img/men_products_2_6_1_1.jpg";
 import collection3 from "../../img/watches_products_1_2.jpg";
@@ -10,6 +10,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import { Link, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Offcanvas } from 'react-bootstrap';
+import AOS from 'aos';
 
 export default function Shop() {
     let wishlist = useSelector((state)=> state.wishlist);
@@ -18,24 +19,31 @@ export default function Shop() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+      AOS.init({duration:900}); 
+
+
   return (
     <>
     {/* shop sec start */}
     <section className='shop'>
       <div className="shoptext">
-          <h1 className='mb-1'>
+          <h1 className='mb-1'  data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
             Shop
             </h1>
-            <Link to="/">
+            <Link to="/"  data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
             Home /
             </Link>  
-            <span> Shop</span>
+            <span  data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear"> Shop</span>
         </div>  
     </section>
     {/* shop sec end */}
     
     {/* categ sec start */}
-    <section className='categ mt-80'>
+    <section className='categ mt-80'  data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
     <div className="container">
     <Swiper
       navigation={{ clickable: true }}
@@ -142,7 +150,8 @@ export default function Shop() {
         <div className="container">
             <div className="row">
                 <div className="col-xl-3 col-lg-3">
-                   <div className="filterData">
+                   <div className="filterData"  data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
                    <div className="filter">
                         <h3 className='mb-5'>
                         Category
@@ -197,7 +206,8 @@ export default function Shop() {
                    </div>
                 </div>
                 <div className="col-xl-9 col-lg-9">
-                    <div className="products">
+                    <div className="products"  data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
                     <Outlet></Outlet>
                     </div>
                 </div>

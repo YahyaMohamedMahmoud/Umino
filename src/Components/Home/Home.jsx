@@ -11,6 +11,7 @@ import insta5 from "../../img/insta5.jpg";
 import insta6 from "../../img/insta6.jpg";
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
 import { Circle, Eye, Heart, Instagram, Quote, ShoppingBag, Star, Trash2 } from 'lucide-react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,7 +23,7 @@ import ProductModal from "../ProductModal/ProductModal";
 import { useDispatch, useSelector } from "react-redux";
 import { viewProduct } from "../../ReduxToolkit/slices/productSlice";
 import { Offcanvas } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const cart = useSelector((state)=> state.cart);
@@ -56,6 +57,9 @@ function toCart(product){
   handleShow3();
 }
 
+  AOS.init({duration : 900}); 
+
+
   return (
     <>
 
@@ -76,7 +80,8 @@ function toCart(product){
       <SwiperSlide className="carousel-inner2">
       <div className="carousel-item2">
       <img src={Slide1} alt="slide1"/>
-      <div className="carouselText text-center">
+      <div className="carouselText text-center"  data-aos="fade-right"
+     data-aos-duration="6000" data-aos-easing="linear">
         <h1>
         Stylish <br />
         Top Trending
@@ -84,7 +89,7 @@ function toCart(product){
         <p className='parag'>
         So soft you don't want to take it off.
         </p>
-        <Link className='link'>
+        <Link className='link' to="/shop">
         Explore Now
         </Link>
       </div>
@@ -101,7 +106,7 @@ function toCart(product){
         <p className='parag'>
         So soft you don't want to take it off.
         </p>
-        <Link className='link'>
+        <Link className='link' to="/shop">
         Explore Now
         </Link>
       </div>
@@ -118,7 +123,7 @@ function toCart(product){
         <p className='parag'>
         So soft you don't want to take it off.
         </p>
-        <Link className='link'>
+        <Link className='link' to="/shop">
         Explore Now
         </Link>
       </div>
@@ -132,7 +137,8 @@ function toCart(product){
     <section className='trend mt-1'>
     <div className="row g-xl-1 g-lg-0 g-md-0 g-sm-0">
       <div className="col-xl-6 col-lg-6 col-md-6">
-        <div className="cards">
+        <div className="cards" data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
           <img src={shop1} alt="banner_1" />
         <div className="cardText">
         <p>
@@ -141,14 +147,15 @@ function toCart(product){
           <h2>
           Top Trends Style
           </h2>
-          <Link to="" className='toShop'>
+          <Link to="/shop" className='toShop'>
           Shop the Look
           </Link>
         </div>
         </div>
       </div>
       <div className="col-xl-6 col-lg-6 col-md-6">
-        <div className="cards">
+        <div className="cards" data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
           <img src={shop2} alt="banner_1" />
         <div className="cardText">
         <p>
@@ -157,7 +164,7 @@ function toCart(product){
           <h2>
           Here Your Style
           </h2>
-          <Link to="" className='toShop'>
+          <Link to="/shop" className='toShop'>
           Shop the Look
           </Link>
         </div>
@@ -171,10 +178,12 @@ function toCart(product){
     <section className='products mt-80'>
       <div className="container">
         <div className="producthead text-center">
-          <h3 className='py-3 head'>
+          <h3 className='py-3 head' data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
           Top Trending
           </h3>
-          <p className='paragHead'>
+          <p className='paragHead' data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
           Here’s some of our most new arrivals products that people are in love with.
           </p>
         </div>
@@ -184,7 +193,7 @@ function toCart(product){
             <div className="productCard productCard2">
               <div className="overlay overlay3">
                 <div className="overImage">
-                  <img src={product.imageHover} alt="product-2" />
+                  <img src={product.imageHover} alt={product.title} />
                 </div>
                 <div className="actions">
                   <button className='add' onClick={()=>toCart(product)}>
@@ -199,7 +208,7 @@ function toCart(product){
                 </div>
               </div>
               <div className="productImg">
-                <img src={product.image} alt="product" />
+                <img src={product.image} alt={product.title} />
               </div>
               <div className="productText">
               <Link  to={`/productdetails/${product.id}`} onClick={()=>dispatch(productDetails(product))}>
@@ -236,7 +245,7 @@ function toCart(product){
                         wishlist.map((product)=> <div key={product.id} className="miniProduct mt-3">
                         <div className="d-flex">
   <div className="miniImage flex-shrink-0">
-    <img src={`/${product.image}`} alt="wishList"/>
+    <img src={`/${product.image}`} alt={product.title}/>
   </div>
   <div className="flex-grow-1 ms-2">
     <Link to={`/productdetails/${product.id}`} onClick={()=>dispatch(productDetails(product))}>{product.title}</Link> 
@@ -316,7 +325,8 @@ function toCart(product){
      <section className='video mt-80'>
      <video src="https://umino.bersky.co/media/revslider/videobanner_h6.mp4" autoPlay muted loop>
      </video>   
-     <div className='videoText'>
+     <div className='videoText' data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
       <p className='parag1'>
       #2022 UMN Collection
       </p>
@@ -326,7 +336,7 @@ function toCart(product){
       <p className='parag2'>
       Change and take your lifestyle to the next level.
       </p>
-      <Link className='link'>
+      <Link className='link' to="/shop">
         Explore Now
         </Link>
      </div>
@@ -417,10 +427,12 @@ function toCart(product){
     <section className='follow mt-80'>
       <div className="container">
         <div className="follow2 text-center">
-          <h6 className='head'>
+          <h6 className='head' data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
           Follow Us
           </h6>
-          <p className='paragHead pt-3'>
+          <p className='paragHead pt-3' data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
           Inspire and let yourself be inspired, from one unique fashion to another.
           </p>
         </div>

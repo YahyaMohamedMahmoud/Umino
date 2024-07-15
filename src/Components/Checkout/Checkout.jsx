@@ -116,7 +116,7 @@ export default function Checkout() {
                               Type : {product.type}
                           </p>
                           <p className='type mt-2'>
-                              Salary : ${product.price}.00
+                              Salary : ${product.price*product.count}.00
                           </p>
                           <p className='type mt-2'>
                               Qty : {product.count}

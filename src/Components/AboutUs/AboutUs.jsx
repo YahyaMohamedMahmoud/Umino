@@ -6,13 +6,17 @@ import banner4 from '../../img/banner-about-3.png';
 import about from '../../img/about-1.png';
 import about2 from '../../img/about-2.png';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
 
+
+AOS.init({duration:900})
 
 export default function AboutUs() {
   return (
     <>
        <section className='shop about'>
-      <div className="shoptext aboutText text-center">
+      <div className="shoptext aboutText text-center" data-aos="fade-down"
+     data-aos-duration="4000" data-aos-easing="linear">
         <p>
         WELCOME TO UMINO
         </p>
@@ -28,7 +32,8 @@ export default function AboutUs() {
     <section className='story p-90'>
         <div className="container">
         <div className="row align-items-center">
-            <div className="col-xl-6 col-lg-6 col-md-6">
+            <div className="col-xl-6 col-lg-6 col-md-6"  data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="storyText">
                     <p className='our'>
                     OUR MISSION
@@ -44,7 +49,8 @@ export default function AboutUs() {
                     </p>
                 </div>
             </div>
-            <div className="col-xl-6 col-lg-6 col-md-6">
+            <div className="col-xl-6 col-lg-6 col-md-6"  data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="storyImg">
                     <img src={banner} alt="banner" />
                 </div>
@@ -55,7 +61,8 @@ export default function AboutUs() {
 
     <section className='our p-90'>
         <div className="container">
-        <div className="storyText text-center pb-5">
+        <div className="storyText text-center pb-5"  data-aos="fade-down"
+     data-aos-duration="4000" data-aos-easing="linear">
         <p className='our'>
         WHY CHOOSE US
                     </p>
@@ -68,7 +75,8 @@ export default function AboutUs() {
 lectus qua. Nunc id cursus metus ididunt ut labore metus episcing.
           </p>
         </div>
-        <div className="row">
+        <div className="row"  data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
             <div className="col-xl-4 col-lg-4 col-md-4">
                 <div className="ourImg">
                     <img src={banner4} alt="banner4" />
@@ -112,9 +120,10 @@ lectus qua. Nunc id cursus metus ididunt ut labore metus episcing.
         </div>
     </section>
     
-    <section className='desc'>
+    <section className='desc2'>
         <div className="container">
-        <div className="descText">
+        <div className="descText" data-aos="fade-down"
+     data-aos-duration="4000" data-aos-easing="linear">
         <h4>
         “ Umino will become an example of the responsible business model by doing business with kindness, profit and bringing practical and long-term values to customers, employees, partners, the community for the environment and for shareholders ”
      </h4>    
@@ -128,12 +137,14 @@ lectus qua. Nunc id cursus metus ididunt ut labore metus episcing.
     <section className='best p-90'>
         <div className="container">
           <div className="row align-items-center">
-          <div className="col-xl-6 col-lg-6 col-md-6">
+          <div className="col-xl-6 col-lg-6 col-md-6" data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="storyImg">
                     <img src={about} alt="about" />
                 </div>
             </div> 
-             <div className="col-xl-6 col-lg-6 col-md-6">
+             <div className="col-xl-6 col-lg-6 col-md-6" data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="storyText text-center">
                     <p className='our'>
                     OUR FACTORIES
@@ -152,7 +163,8 @@ lectus qua. Nunc id cursus metus ididunt ut labore metus episcing.
             </div>
           </div>
           <div className="row mt-80 align-items-center">
-          <div className="col-xl-6 col-lg-6 col-md-6">
+          <div className="col-xl-6 col-lg-6 col-md-6" data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="storyText text-center">
                     <p className='our'>
                     OUR QUALITY
@@ -169,7 +181,8 @@ lectus qua. Nunc id cursus metus ididunt ut labore metus episcing.
      </Link>
                 </div>
             </div>
-          <div className="col-xl-6 col-lg-6 col-md-6">
+          <div className="col-xl-6 col-lg-6 col-md-6" data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="storyImg">
                     <img src={about2} alt="about2" />
                 </div>
@@ -182,7 +195,8 @@ lectus qua. Nunc id cursus metus ididunt ut labore metus episcing.
     <section className='box mb-5'>
         <div className="container">
             <div className="boxChild">
-            <div className="boxText text-center">
+            <div className="boxText text-center" data-aos="fade-down"
+     data-aos-duration="4000" data-aos-easing="linear">
             <p>
             RULE THE WAVES
             </p>

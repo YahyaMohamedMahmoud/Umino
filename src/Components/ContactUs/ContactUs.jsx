@@ -7,7 +7,8 @@ export default function ContactUs() {
     <>
         {/* shop sec start */}
         <section className='cart'>
-      <div className="shoptext text-center">
+      <div className="shoptext text-center" data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
           <h1 className='mb-1'>
           Contact Us
             </h1>
@@ -18,11 +19,14 @@ export default function ContactUs() {
         </div>  
     </section>
     {/* shop sec end */}
+
+    {/*map sec start*/}
     <section className='map'>
         <div className="container">
         <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.206106259951!2d-0.12585020164521804!3d51.5028070932796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2seg!4v1720975959208!5m2!1sen!2seg" width="100%" height="500" allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></Iframe>
         <div className="row">
-            <div className="col-xl-4 col-lg-6">
+            <div className="col-xl-4 col-lg-6" data-aos="fade-right"
+     data-aos-duration="4000" data-aos-easing="linear">
                 <div className="help my-5">
                     <h2>
                     Here to Help
@@ -46,7 +50,8 @@ export default function ContactUs() {
                     </ul>
                 </div>
             </div>
-            <div className="col-xl-8 col-lg-6">
+            <div className="col-xl-8 col-lg-6" data-aos="fade-up"
+     data-aos-duration="4000" data-aos-easing="linear">
                <div className="help mt-5 mb-5">
                <h3>
                 Get in Touch
@@ -61,12 +66,17 @@ export default function ContactUs() {
             </div>
             <input className='input mt-2' type="email" name="%" id="%" placeholder='Email'/>
             <textarea name="^" id="^" rows="9" cols={2} className='input mt-3' placeholder='Message'></textarea>
+            <button className='checkOut toCart d-block text-center border-0'>
+                                Send Message
+
+             </button>
        </form>
                </div>
             </div>
         </div>
         </div>
     </section>
+    {/*map sec end*/}
     </>
   )
 }

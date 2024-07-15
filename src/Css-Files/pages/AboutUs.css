@@ -24,26 +24,26 @@
     color: #999999;
     font-size: 14px;
 }
-.desc {
+.desc2 {
     height: 300px;
     background-color: #303e39;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.desc .descText {
+.desc2 .descText {
     width: 65%;
     margin: auto;
     text-align: center;
 }
-.desc .descText h4{
+.desc2 .descText h4{
     color: #ffdb77;
     font-size: 20px;
     font-weight: var(--font-weight-Regular);
     line-height: 1.6;
     margin-bottom: 20px;
 }
-.desc .descText p{
+.desc2 .descText p{
     color: var(--secand-color);
 }
 .best .storyText .checkOut{

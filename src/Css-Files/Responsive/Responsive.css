@@ -736,10 +736,10 @@ z-index: 1;
 .our .ourText{
     margin-bottom: 20px;
 }
-.desc .descText {
+.desc2 .descText {
     width: 100%;
 }
-.desc .descText h4 {
+.desc2 .descText h4 {
     font-size: 18px;
     line-height: 1.4;
 }
