@@ -132,7 +132,7 @@ export default function Shop() {
       <div className="cardImag">
                 <img src={collection6} alt="collection6" />
                 <div className="cardInfo">
-                    <Link to="/shop" className='infoHead'>
+                    <Link to="/shop/men" className='infoHead'>
                     Winter Coat 
                     </Link>
                 </div>
