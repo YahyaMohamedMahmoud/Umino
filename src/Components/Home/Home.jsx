@@ -23,7 +23,7 @@ import ProductModal from "../ProductModal/ProductModal";
 import { useDispatch, useSelector } from "react-redux";
 import { viewProduct } from "../../ReduxToolkit/slices/productSlice";
 import { Offcanvas } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const cart = useSelector((state)=> state.cart);

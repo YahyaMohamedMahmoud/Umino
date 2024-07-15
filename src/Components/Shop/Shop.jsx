@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import collection from "../../img/fashion_products_16_02.jpg";
 import collection2 from "../../img/men_products_2_6_1_1.jpg";
 import collection3 from "../../img/watches_products_1_2.jpg";
-import collection4 from "../../img/fashion_products_8_1.jpg";
+import collection4 from "../../img/shoess.jpg";
 import collection5 from "../../img/fashion_products_7_1.jpg";
 import collection6 from "../../img/fashion_products_6_6_1.jpg";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -92,7 +92,7 @@ export default function Shop() {
       <div className="cardImag">
                 <img src={collection2} alt="collection2" />
                 <div className="cardInfo">
-                    <Link to="/shop" className='infoHead'>
+                    <Link to="/shop/men" className='infoHead'>
                     Men Clothes  
                     </Link>
                 </div>
@@ -102,7 +102,7 @@ export default function Shop() {
       <div className="cardImag">
                 <img src={collection3} alt="collection3" />
                 <div className="cardInfo">
-                    <Link to="/shop" className='infoHead'>
+                    <Link to="/shop/watches" className='infoHead'>
                     Watches
                     </Link>
                 </div>
@@ -112,8 +112,8 @@ export default function Shop() {
       <div className="cardImag">
                 <img src={collection4} alt="collection4" />
                 <div className="cardInfo">
-                    <Link to="/shop" className='infoHead'>
-                    Dresses 
+                    <Link to="/shop/sneakers" className='infoHead'>
+                    Sneakers
                     </Link>
                 </div>
             </div>
