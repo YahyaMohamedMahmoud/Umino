@@ -206,8 +206,7 @@ export default function Shop() {
                    </div>
                 </div>
                 <div className="col-xl-9 col-lg-9">
-                    <div className="products"  data-aos="fade-up"
-     data-aos-duration="4000" data-aos-easing="linear">
+                    <div className="products">
                     <Outlet></Outlet>
                     </div>
                 </div>
