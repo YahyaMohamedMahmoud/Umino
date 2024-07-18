@@ -309,7 +309,10 @@
         margin-top: 20px;
     }
     .shiping .checkOut {
-        padding: 15px 39%;
+        padding: 15px 28px;
+        width: 100%;
+        display: block;
+        text-align: center;
     }
     .modal-dialog{
         max-width: 90%;
@@ -598,15 +601,18 @@
         display: none;
     }
     .cartTable .back .backtoShop {
-        padding: 15px 28%;
+        padding: 15px 24%;
         margin-bottom: 10px;
     }
     .cartTable .back .backtoShop2{
-        padding: 15px 29.5%;
+        padding: 15px 25.5%;
         margin-top: 21px;
     }
     .shiping .checkOut {
-        padding: 15px 28%;
+        padding: 15px 28px;
+        width: 100%;
+        display: block;
+        text-align: center;
     }
     .cart .shoptext h1 {
         font-size: 35px;
@@ -763,5 +769,8 @@ z-index: 1;
 .not .checkOut {
     width: 60%;
     margin: auto;
+}
+.cartTable .back {
+    text-align: center;
 }
 }
